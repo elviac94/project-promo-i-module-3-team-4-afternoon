@@ -1,14 +1,13 @@
 import React from 'react';
+import FormFill from './FormFill';
+import '../stylesheets/form.scss';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
       <div className="App">
-        
+      <FormFill/>
       </div>
     );
   }
