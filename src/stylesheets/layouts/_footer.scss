@@ -1,0 +1,38 @@
+.footer__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @include forTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items:center;
+      }
+    
+
+    & .footer__container--title{
+    font-family:$mainFont;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #d8d8d8;
+    margin-bottom: 12px;
+    
+    @include forTablet{
+      margin-top: 9px;
+    }
+
+    }
+   
+        & .logo-container img{
+
+                 width: 103px;
+                 height: 40px;
+
+            @include forTablet{
+              margin-top: 10px;
+            }
+        }
+
+}
