@@ -35,7 +35,7 @@ class Landing extends React.Component {
               <h3 className="text-item">Comparte</h3>
             </div>
           </div>
-          <a className="mainindex__button" href="./form.html#mainform.html">Comenzar</a>
+          <a className="mainindex__button" href="">Comenzar</a>
           </div>
         </main>
       </div>
