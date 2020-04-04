@@ -19,10 +19,10 @@ class Landing extends React.Component {
             </div>
           <div className="mainindex__container--text">
             <h1 className="mainindex__container--title">Crea tu tarjeta de visita</h1>
-            <p className="mainindex__container--prhase">Crea mejores contactos profesionales de forma fácil y cómoda</p>
+            <p className="mainindex__container--phrase">Crea mejores contactos profesionales de forma fácil y cómoda</p>
           </div>
           <div className="mainindex__container--typeface">
-            <div className="image-Designe">
+            <div className="image-design">
               <i className="far fa-object-ungroup"></i>
               <h3 className="text-item">Diseña</h3>
           </div>
