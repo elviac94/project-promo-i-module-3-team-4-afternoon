@@ -1,5 +1,5 @@
 .mainindex__container {
-  height: 100vh; // calc(100vh - 90px);
+  height: 80vh; // calc(100vh - 90px);
   padding-top: 95px;
   // padding-bottom: 30px;
   display: flex;
@@ -8,7 +8,9 @@
   align-items: center;
   
   @include forTablet {
-    padding-bottom: 59px;
+    height: 90vh;
+    padding-top: 100px;
+    // padding-bottom: 59px;
   }
 
   .mainindex__container--logo {

@@ -12,7 +12,6 @@ body{
 }
 
 .wrapperMain{
-  // height: 100vh;
   background-color: $LandingBgColor;
   padding: 0px 35px 0px 35px;
 
@@ -22,6 +21,7 @@ body{
 }
 
 .wrapperFooter{ /* lo he comprobado y queda bien */
+  border-top: solid 1px #d8d8d8;
   padding: 18px 60px 20px 60px;
 
   @include forTablet{
