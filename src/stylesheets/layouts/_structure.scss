@@ -1,6 +1,7 @@
 
 body{
-  font-family: $mainFont ;
+  font-family: $mainFont;
+  overflow: hidden;
 }
 
 .wrapper-general{
@@ -26,5 +27,5 @@ body{
 
   @include forTablet{
     padding: 10px 40px 10px 40px;
- }
+  }
 }

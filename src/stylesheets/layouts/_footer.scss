@@ -25,13 +25,13 @@
 
     }
    
-        & .logo-container img{
-                 width: 103px;
-                 height: 40px;
+      & .logo-container img{
+          width: 103px;
+          height: 40px;
 
-            @include forTablet{
-              margin-top: 10px;
-            }
+          @include forTablet{
+            margin-top: 10px;
+          }
         }
 
 }
