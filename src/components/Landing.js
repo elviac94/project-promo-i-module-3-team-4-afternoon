@@ -9,7 +9,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="Landing">
-        <main id="mainindex" class="wrapperMain">
+        <main id="mainindex" className="wrapperMain">
           <div className="mainindex__container">
             <div className="mainindex__container--logo">
               <a className="mainindex__logo-container" href="#" title="">
