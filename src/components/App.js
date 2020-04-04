@@ -1,4 +1,6 @@
 import React from 'react';
+import '../stylesheets/main.scss';
+import Landing from './Landing';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        
+        <Landing />
       </div>
     );
   }
