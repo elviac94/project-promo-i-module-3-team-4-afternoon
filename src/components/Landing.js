@@ -12,10 +12,10 @@ class Landing extends React.Component {
         <main id="mainindex" className="wrapperMain">
           <div className="mainindex__container">
             <div className="mainindex__container--logo">
-              <a className="mainindex__logo-container" href="#" title="">
+              {/* <a className="mainindex__logo-container" href="#" title=""> */}
                 <img src={Logo} alt="Logo Awesome profile-cards"
-                    title="Awesome profile-cards" />
-              </a>
+                    title="Awesome profile cards" />
+              {/* </a> */}
             </div>
           <div className="mainindex__container--text">
             <h1 className="mainindex__container--title">Crea tu tarjeta de visita</h1>
