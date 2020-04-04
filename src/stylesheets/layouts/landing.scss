@@ -1,9 +1,10 @@
-.mainindex__container { 
+.mainindex__container {
+  height: 100vh; // calc(100vh - 90px);
   padding-top: 95px;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   
   @include forTablet {
@@ -40,6 +41,7 @@
       color: $primaryColor;
       font-size: 19.2px;
       font-weight: 900;
+      padding-bottom: 2px;
       
       @include forTablet{
         font-size: 24px;
@@ -51,6 +53,7 @@
       color: $secondaryTextColor;
       font-size: 12.8px;
       width: 264px;
+      line-height: 1.3;
       
       @include forTablet{
         width: 331px;
@@ -62,13 +65,14 @@
   .mainindex__container--typeface {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 38.6px;
-    border: solid 1.6px rgba(156, 105, 76, 0.3);
-    padding-top: 15px;
-    padding-bottom: 10px;
+    border: solid 1.6px rgba(225,115,52, 0.21);
+    padding: 15px 0 10px 0;
     width: 100%;
     max-width: 268px;
+    border-radius: 5px;
+    text-align: center;
 
     @include forTablet{
       margin-bottom: 186px;
@@ -76,21 +80,17 @@
     }
   }
 
-  .mainindex__button {
-    font-family: $mainFont;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    background-color: $LandingButtonColor;
-    border-radius: 21px;
-    width: 129px;
-    height: 42px;
-    padding-top: 10px;
+  .image-design, .image-complete, .image-share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .far {
+  .far, .fas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $primaryColor;
     width: 25px;
     height: 26px;
@@ -98,18 +98,6 @@
 
     @include forTablet{
       width: 32px;
-      height: 29px;
-      font-size: 28px;
-    }
-  }
-
-  .fas {
-    color: $primaryColor;
-    width: 25px;
-    height: 26px;
-    font-size: 22.4px;
-    
-    @include forTablet{
       height: 29px;
       font-size: 28px;
     }
@@ -129,23 +117,17 @@
     }
   }
 
-  .image-design {
+  .mainindex__button {
+    font-family: $mainFont;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: $LandingButtonColor;
+    border-radius: 21px;
+    width: 129px;
+    height: 42px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-complete {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-share {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

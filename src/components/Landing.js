@@ -28,14 +28,14 @@ class Landing extends React.Component {
           </div>
           <div className="image-complete">
               <i className="far fa-keyboard fa-lg"></i>
-              <h3 className="text-item">rellena</h3>
+              <h3 className="text-item">Rellena</h3>
           </div>
           <div className="image-share">
               <i className="fas fa-share-alt"></i>
-              <h3 className="text-item">comparte</h3>
+              <h3 className="text-item">Comparte</h3>
             </div>
           </div>
-          <a className="mainindex__button" href="./form.html#mainform.html">comenzar</a>
+          <a className="mainindex__button" href="./form.html#mainform.html">Comenzar</a>
           </div>
         </main>
       </div>
