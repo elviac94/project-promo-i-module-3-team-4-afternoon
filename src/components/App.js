@@ -1,8 +1,8 @@
 import React from 'react';
 import '../stylesheets/main.scss';
-// import Landing from './Landing';
+import Landing from './Landing';
 import Header from './Header';
-// import CardMaker from './CardMaker';
+import CardMaker from './CardMaker';
 import CardPreview from './CardPreview';
 import Footer from './Footer';
 
@@ -15,9 +15,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {/* <Landing /> */}
-        <Header />
-        <CardPreview />
+        <Landing />
+        {/* <Header /> */}
+        <CardMaker />
         <Footer />
       </div>
     );

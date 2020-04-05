@@ -22,7 +22,8 @@ class CardPreview extends React.Component {
                     <p className="card--full_profession">Front-end developer</p>
                 </div>
             </div>
-            <div className="image--preview_picture js__profile-image"></div>
+            <div className="image--preview_picture js__profile-image"></div> 
+            {/* Falta añadir para que se vean los iconos */}
             <div className="image--preview_icons icon-palette1" id="image--preview_icons">
                 <div id="icon1" className="preview icon--1 hidden--fill"></div>
                 <div id="icon2" className="preview icon--2 hidden--fill"></div>

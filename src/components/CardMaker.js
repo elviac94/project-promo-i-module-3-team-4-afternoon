@@ -10,8 +10,11 @@ class CardMaker extends React.Component {
 
   render() {
       return (
+        //   Esto hay que revisarlo
         <div className="CardMaker">
-            {/* <CardPreview /> */}
+            <div className="Header"></div>
+            <div className="CardPreview"></div>
+            <div className="Footer"></div>
         </div>
       );
   }
