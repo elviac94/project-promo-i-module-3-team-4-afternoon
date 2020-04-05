@@ -14,7 +14,7 @@ class Design extends React.Component {
                     <a className="arrow"></a>
                 </div>
 
-                <div className="design--bottom">
+                <div className="design--bottom--visible">
                     <p className="design-subtitle">colores</p>
 
                     <div className="color-form">
