@@ -11,8 +11,8 @@ class Header extends React.Component {
       <div className="Header">
         <header className="header">
           <div className="wrapper-general">
-              <div className="container">
-                <a className="image" to="./Landing"></a>
+              <div className="header__container">
+                <a className="image" href="" title="Ir al inicio"></a>
               </div>
             </div>
         </header>
