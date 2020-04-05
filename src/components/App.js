@@ -1,4 +1,5 @@
 import React from 'react';
+import CardMaker from './cards/CardMaker'
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        
+        <CardMaker />
       </div>
     );
   }
