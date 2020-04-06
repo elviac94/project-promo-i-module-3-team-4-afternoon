@@ -1,7 +1,8 @@
 import React from 'react';
 import CardPreview from './CardPreview';
 
-class CardMaker extends React.Component {
+
+class CardForm extends React.Component {
   constructor(props) {
     super(props);
   }

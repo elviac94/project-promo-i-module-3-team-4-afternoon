@@ -3,10 +3,14 @@ import React from 'react';
 class CardPreview extends React.Component {
     constructor(props) {
       super(props);
+      // Esto habrá que añadirlo desde CardForm
       this.state = {
         name: 'Nombre Apellido',
-        job: 'Front-end developer'
+        job: 'Front-end developer',
+        palette: 1
       }
+
+    
 }
   
   render() {

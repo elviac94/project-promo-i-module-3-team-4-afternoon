@@ -1,19 +1,29 @@
 import React from 'react';
 // import Form from './Form';
-import CardPreview from './CardPreview';
+import CardForm from './CardForm';
+import Header from './Header';
+import Footer from './Footer';
 
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { 
+      userInput: {
+        name: 'Nombre Apellido',
+        job: 'Front-end developer',
+        palette: 1
+      }
   }
+}
 
 
   render() {
       return (
         //   Esto hay que revisarlo
         <div className="CardMaker">
-            {/* <CardForm /> */}
-            <CardPreview />
+            <Header/>
+            <CardForm />
+            <Footer/>
         </div>
       );
   }
