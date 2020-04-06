@@ -1,13 +1,14 @@
 import React from 'react';
-import FormFill from './FormFill';
-import '../stylesheets/form.scss';
+import CardMaker from './CardMaker';
+
+
 
 class App extends React.Component {
 
   render() {
     return (
       <div className="App">
-      <FormFill/>
+      <CardMaker/>
       </div>
     );
   }
