@@ -8,4 +8,5 @@ class CardMaker extends React.Component {
         )
     }
 }
+
 export default CardMaker;
