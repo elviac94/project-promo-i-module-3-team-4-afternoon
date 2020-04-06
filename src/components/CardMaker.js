@@ -3,6 +3,7 @@ import React from 'react';
 import CardForm from './CardForm';
 import Header from './Header';
 import Footer from './Footer';
+import CardPreview from './CardPreview'
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -19,10 +20,10 @@ class CardMaker extends React.Component {
 
   render() {
       return (
-        //   Esto hay que revisarlo
         <div className="CardMaker">
           <Header />
           <CardForm />
+          <CardPreview />
           <Footer />
         </div>
       );

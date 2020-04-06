@@ -10,7 +10,6 @@ class CardForm extends React.Component {
   render() {
     return (
         <div className="CardForm">
-            <CardPreview />
         </div>
     );
   }
