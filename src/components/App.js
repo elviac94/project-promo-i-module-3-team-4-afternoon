@@ -1,7 +1,6 @@
 import React from 'react';
 import CardMaker from './CardMaker';
 
-
 class App extends React.Component {
 
 
