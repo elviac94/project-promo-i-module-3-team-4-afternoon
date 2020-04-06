@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/form.scss';
+import '../../stylesheets/form.scss';
 
 class FormFill extends React.Component{
   render(){

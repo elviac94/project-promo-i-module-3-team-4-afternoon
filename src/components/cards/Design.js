@@ -1,12 +1,12 @@
 import React from 'react';
-import '../stylesheets/form.scss';
+import '../../stylesheets/form.scss';
 
 class Design extends React.Component {
     render() {
         return (
             <div className="form__design">
 
-                <div className="design--top">
+                <div className="design--top design--top--active">
                     <div className="title-icon">
                         <i className="far fa-object-ungroup"></i>
                         <h3 className="design-title">diseña</h3>

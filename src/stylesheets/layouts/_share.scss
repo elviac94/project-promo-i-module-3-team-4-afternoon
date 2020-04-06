@@ -1,0 +1,160 @@
+/////////////////////////SHARE
+@import '../utils/variables';
+@import '../utils/mixins';
+
+// ShareTop //
+.share--top {
+    border-bottom: solid 1px lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+  
+    .share--icon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  
+      .fas {
+        padding-right: 10px;
+        color: #e17334;
+      }
+  
+      .share--title {
+        text-transform: uppercase;
+        color: $primaryTextColor;
+        font-weight: bold;
+        font-weight: 600;
+      }
+    }
+  
+    .arrow {
+      width: 16px;
+      height: 18px;
+      background-image: url(../../images/arrow.png);
+      background-size: contain;
+      cursor: pointer;
+    }
+  
+    &--active .arrow {
+      transform: rotateX(180deg);
+      animation-name: intro;
+      animation-duration: 3s;
+      animation-iteration-count: 2;
+  
+      @keyframes intro {
+        from {
+          opacity: 0.2;
+        }
+  
+        to {
+          opacity: 1;
+        }
+      }
+    }
+}
+
+// ShareBottom: ShareBottomBtnCard //
+.share--bottom {
+    display: none;
+  
+    &--visible {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 25px;
+      padding-top: 20px;
+    }
+  
+    .create-card--button {
+      background-color: $primaryColor;
+      width: 199px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      font-size: 18px;
+      color: white;
+      text-transform: uppercase;
+  
+      .far {
+        padding-right: 10px;
+      }
+  
+      &--active {
+        background-color: #d5d5d5;
+      }
+  
+  
+    }
+}
+  
+.border--line {
+    border-bottom: solid 1px lightgrey;
+    height: 1px;
+    width: 100%;
+}
+
+// ShareBottom: ShareBottomBtnTwitter //
+.created-card--container {
+    display: none;
+    width: 100%;
+  
+    &--visible {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: solid 1px lightgrey;
+    }
+  
+    .created-card--title {
+      font-size: 18px;
+      padding-bottom: 7px;
+      padding-top: 7px;
+      color: $primaryTextColor;
+      font-weight: 600;
+    }
+  
+    & .created-card--link {
+      text-decoration: none;
+      color: $primaryColor;
+      font-size: 12px;
+      padding-bottom: 7px;
+      padding-top: 7px;
+      font-weight: bold;
+    }
+  
+    & .twitter--button {
+      width: 181px;
+      height: 30px;
+      background-color: #00a0f5;
+      margin: 10px;
+      margin-bottom: 30px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .twitter--link {
+        color: white;
+        font-size: 14px;
+        padding: 3px;
+  
+        .fab {
+          padding-right: 10px;
+        }
+      }
+    }
+}
+  
