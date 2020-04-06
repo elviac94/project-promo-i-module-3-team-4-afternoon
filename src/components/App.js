@@ -1,5 +1,7 @@
 import React from 'react';
-import CardMaker from './cards/CardMaker'
+import '../stylesheets/main.scss';
+import Landing from './Landing';
+import CardMaker from './CardMaker';
 
 class App extends React.Component {
 
@@ -7,6 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Landing />
         <CardMaker />
       </div>
     );
