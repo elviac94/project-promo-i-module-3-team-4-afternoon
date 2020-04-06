@@ -1,17 +1,11 @@
 import React from 'react';
-import Share from './Share';
-
+import CardForm from './CardForm';
 
 class CardMaker extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
-        return(
-            <Share/>
+        return (
+            <CardForm />
         )
     }
 }
-
 export default CardMaker;

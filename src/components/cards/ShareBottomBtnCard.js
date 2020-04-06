@@ -9,7 +9,7 @@ class ShareBottomBtnCard extends React.Component {
                     <i className="far fa-address-card"></i>
                         Crear tarjeta
             </button>
-            <div className="border--line"></div>
+            
             </div>
         )
     }

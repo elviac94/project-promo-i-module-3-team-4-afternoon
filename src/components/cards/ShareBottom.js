@@ -6,8 +6,9 @@ class ShareBottom extends React.Component {
     render() {
         return (
 
-            <div className="share--bottom">
+            <div className="share--bottom share--bottom--visible">
                 <ShareBottomBtnCard />
+                <div className="border--line"></div>
                 <ShareBottomBtnTwitter />
             </div>
         )
