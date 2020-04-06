@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo_awesome.svg'
+import Footer from './Footer';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -38,7 +39,9 @@ class Landing extends React.Component {
           <a className="mainindex__button" href="./CardMaker.js">Comenzar</a>
           </div>
         </main>
+        <Footer />
       </div>
+      
     );
   }
 }

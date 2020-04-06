@@ -21,9 +21,9 @@ class CardMaker extends React.Component {
       return (
         //   Esto hay que revisarlo
         <div className="CardMaker">
-            <Header/>
-            <CardForm />
-            <Footer/>
+          <Header />
+          <CardForm />
+          <Footer />
         </div>
       );
   }
