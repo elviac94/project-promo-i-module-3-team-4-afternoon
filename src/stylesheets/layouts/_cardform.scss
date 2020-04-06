@@ -21,7 +21,6 @@
 
 /////////////////////////DESIGN
 
-
 .design--top {
   border-bottom: solid 1px lightgrey;
   display: flex;
@@ -75,16 +74,11 @@
 }
 
 .design--bottom {
-  display: none;
-
-  &--visible {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-    justify-content: space-between;
-  }
-
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
 
   .design-subtitle {
     text-transform: uppercase;
@@ -148,7 +142,6 @@
         width: 30px;
         height: 25px;
         background-color: #bd1010;
-
       }
 
       .c2-3 {
@@ -181,7 +174,6 @@
         width: 30px;
         height: 25px;
         background-color: #eab052;
-
       }
 
       .c3-3 {
@@ -190,10 +182,8 @@
         background-color: #a0c0cf;
       }
     }
-
   }
 }
-
 
 /////////////////////////FILL
 .fill--top {
@@ -208,7 +198,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
 
     .fill--title {
       text-transform: uppercase;
@@ -319,10 +308,7 @@
   }
 }
 
-
-
 /////////////////////////SHARE
-
 .share--top {
   border-bottom: solid 1px lightgrey;
   display: flex;
@@ -474,3 +460,4 @@
     }
   }
 }
+
