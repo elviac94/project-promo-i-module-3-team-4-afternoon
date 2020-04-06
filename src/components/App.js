@@ -1,7 +1,8 @@
 import React from 'react';
 import '../stylesheets/main.scss';
 import Landing from './Landing';
-import CardMaker from './CardMaker';
+import CardMaker from './cards/CardMaker';
+
 
 class App extends React.Component {
 
