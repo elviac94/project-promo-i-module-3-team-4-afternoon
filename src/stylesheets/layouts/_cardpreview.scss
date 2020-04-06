@@ -4,6 +4,7 @@
   @include forTablet{
     display:flex;
     flex-direction: row;
+    // height: 80vh;  Para forzar height. A revisar cuando se pliguen las secciones y poner en main-form si es necesario
   }
 }
 
@@ -21,7 +22,6 @@
     margin-top:20px;
     margin-right:40px;
     margin-bottom:20px;
-    // height: 75vh; Para forzar que se extienda, a revisar y poner en main-form si es necesario
   }
 
   .box--preview{

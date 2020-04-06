@@ -20,14 +20,14 @@ class FormFill extends React.Component{
           <div className="fillform bottom-1">
             <div className="fillform--name">
               <label className="label-fill" htmlFor="firstName">Nombre completo<span className="required">*</span></label>
-              <input placeholder="Sally Jill" id="firstName" type="text" name="firstName" className="input-fill input-validation" required />
-              <p className="text-error hidden" id="text-error_name">*Dinos tu nombre por favor</p>
+              <input placeholder="Sally Jill" id="firstName" type="text" name="firstName" className="input-fill input-validation" required defaultChecked/>
+              <p className="text-error hidden" id="text-error_name">*Dinos tu nombre por favor.</p>
             </div>
             <div className="fillform--job">
               <label className="label-fill" htmlFor="addjob">Puesto<span className="required">*</span></label>
               <input placeholder="Front-end unicorn" id="addjob" type="text" name="addjob" className="input-fill input-validation"
                 required />
-              <p className="text-error hidden" id="text-error_job">*Tu trabajo también, gracias</p>
+              <p className="text-error hidden" id="text-error_job">*Tu trabajo también, gracias.</p>
             </div>
           </div>
           <div className="fillform bottom-2">
@@ -45,7 +45,7 @@ class FormFill extends React.Component{
               <label className="label-fill" htmlFor="addemail">Email<span className="required">*</span></label>
               <input placeholder="sally-hill@gmail.com" id="addemail" type="email" name="addemail" className="input-fill input-validation"
                 required />
-              <p className="text-error hidden" id="text-error_email">*Dejanos tu email para que puedan contactarte.</p>
+              <p className="text-error hidden" id="text-error_email">*Deja tu email para que puedan contactarte.</p>
             </div>
             <div className="fillform--phone">
               <label className="label-fill" htmlFor="addphone">Teléfono</label>
@@ -56,12 +56,12 @@ class FormFill extends React.Component{
               <label className="label-fill" htmlFor="addlinkedin">Linkedin<span className="required">*</span></label>
               <input placeholder="linkedin.com/in/unicornfront" id="addlinkedin" type="text" name="addlinkedin"
                 className="input-fill input-validation" required />
-              <p className="text-error hidden" id="text-error_linkedin">*Por favor introduce tu Linkedin</p>
+              <p className="text-error hidden" id="text-error_linkedin">*Por favor introduce tu Linkedin.</p>
             </div>
             <div className="fillform--github">
               <label className="label-fill" htmlFor="addgithub">Github<span className="required">*</span></label>
               <input placeholder="@sallyhill" id="addgithub" type="text" name="addgithub" className="input-fill input-validation" required />
-              <p className="text-error hidden" id="text-error_git">*Agradeceran ver tu trabajo</p>
+              <p className="text-error hidden" id="text-error_git">*Agradecerán ver tu trabajo.</p>
             </div>
           </div>
         </div>

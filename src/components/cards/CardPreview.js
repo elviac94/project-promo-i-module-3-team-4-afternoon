@@ -16,7 +16,6 @@ class CardPreview extends React.Component {
   render() {
     return (
       <div className="CardPreview">
-        <section className="card--preview">
           <div className="box--preview">
             <button className="button--preview">
               <i className="far fa-trash-alt"></i> Reset
@@ -40,7 +39,6 @@ class CardPreview extends React.Component {
             </div>
         </div> 
     </div>
-</section>
         </div>
       );
     }

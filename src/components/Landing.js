@@ -26,12 +26,12 @@ class Landing extends React.Component {
             <div className="image-design">
               <i className="far fa-object-ungroup"></i>
               <h3 className="text-item">Diseña</h3>
-          </div>
-          <div className="image-complete">
+            </div>
+            <div className="image-complete">
               <i className="far fa-keyboard fa-lg"></i>
               <h3 className="text-item">Rellena</h3>
-          </div>
-          <div className="image-share">
+            </div>
+            <div className="image-share">
               <i className="fas fa-share-alt"></i>
               <h3 className="text-item">Comparte</h3>
             </div>

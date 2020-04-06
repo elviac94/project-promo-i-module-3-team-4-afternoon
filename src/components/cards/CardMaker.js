@@ -22,9 +22,12 @@ class CardMaker extends React.Component {
       return (
         <div className="CardMaker">
           <Header />
-          <CardPreview />
-          <CardForm />
-          
+          <main className="main-form">
+          <section className="card--preview">
+            <CardPreview />
+            </section>
+            <CardForm />
+          </main>
           <Footer />
         </div>
       );
