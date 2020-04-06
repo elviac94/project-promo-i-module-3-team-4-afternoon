@@ -3,6 +3,10 @@ import React from 'react';
 class CardPreview extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+        name: 'Nombre Apellido',
+        job: 'Front-end developer'
+      }
 }
   
   render() {
@@ -18,8 +22,8 @@ class CardPreview extends React.Component {
             <div className="image--preview_text color-palette1" id="image--preview_text">
                 <div className="preview--square"></div>
                 <div className="card--full">
-                    <h3 className="card--full_name">Nombre Apellido</h3>
-                    <p className="card--full_profession">Front-end developer</p>
+                    <h3 className="card--full_name">{this.state.name}</h3>
+                    <p className="card--full_profession">{this.state.job}</p>
                 </div>
             </div>
             <div className="image--preview_picture js__profile-image"></div> 
