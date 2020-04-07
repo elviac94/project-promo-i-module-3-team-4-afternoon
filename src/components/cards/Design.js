@@ -6,17 +6,6 @@ class Design extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     }
-
-  handleClick() {
-    const designBottom = document.querySelector('.design--bottom')
-    designBottom.classList.toggle('hidden');
-  }
-
-  handleArrow(){
-    const arrow = document.querySelector('.arrow');
-    arrow.classList.add('arrow-collapse');
-  }
-
     render() {
         return (
             <div className="form__design">
@@ -26,7 +15,7 @@ class Design extends React.Component {
                         <i className="far fa-object-ungroup"></i>
                         <h3 className="design-title">diseña</h3>
                     </div>
-                    <div className="arrow" onClick={this.handleArrow}></div>
+                    <div className="arrow"></div>
                 </div>
 
                 <div className="design--bottom">
@@ -36,7 +25,7 @@ class Design extends React.Component {
 
                         <div>
                             <label id="lab-1" htmlFor="color-option1">
-                                <input id="color-option1" type="radio" value="color-option1" name="color-option" />
+                                <input id="color-option1" type="radio" value="color-option1" name="color-option" defaultChecked/>
                                 <div className="c1-1"></div>
                                 <div className="c1-2"></div>
                                 <div className="c1-3"></div>
@@ -66,6 +55,14 @@ class Design extends React.Component {
             </div>
         );
     }
+    //Remove
+    handleClick() {
+        const designBottom = document.querySelector('.design--bottom')
+        designBottom.classList.toggle('hidden');
+        const arrow = document.querySelector('.arrow');
+        arrow.classList.add('arrow-collapse');
+      }
+    
 }
 
 

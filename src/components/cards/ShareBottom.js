@@ -7,13 +7,7 @@ class ShareBottom extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         }
-    
-        handleClick() {
-          const shareBottom = document.querySelector('.share--bottom')
-          const arrow = document.querySelector('.arrow');
-          shareBottom.classList.toggle('hidden');
-          arrow.classList.add('arrow-collapse');
-        }
+
 
     render() {
         return (
@@ -25,6 +19,13 @@ class ShareBottom extends React.Component {
             </div>
         )
     }
+    // Remove
+    handleClick() {
+        const shareBottom = document.querySelector('.share--bottom')
+        const arrow = document.querySelector('.arrow');
+        shareBottom.classList.toggle('hidden');
+        arrow.classList.add('arrow-collapse');
+      }
 }
 
 export default ShareBottom;
