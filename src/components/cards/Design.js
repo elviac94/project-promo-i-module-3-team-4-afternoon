@@ -2,16 +2,31 @@ import React from 'react';
 import '../../stylesheets/form.scss';
 
 class Design extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    }
+
+  handleClick() {
+    const designBottom = document.querySelector('.design--bottom')
+    designBottom.classList.toggle('hidden');
+  }
+
+  handleArrow(){
+    const arrow = document.querySelector('.arrow');
+    arrow.classList.add('arrow-collapse');
+  }
+
     render() {
         return (
             <div className="form__design">
 
-                <div className="design--top design--top--active">
+                <div className="design--top design--top--active" onClick={this.handleClick}>
                     <div className="title-icon">
                         <i className="far fa-object-ungroup"></i>
                         <h3 className="design-title">diseña</h3>
                     </div>
-                    <a className="arrow"></a>
+                    <div className="arrow" onClick={this.handleArrow}></div>
                 </div>
 
                 <div className="design--bottom">

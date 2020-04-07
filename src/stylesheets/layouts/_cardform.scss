@@ -1,3 +1,10 @@
+.hidden {
+  display: none;
+}
+.arrow-collapse {
+  transform: rotate(180deg);
+}
+
 .main-form {
   @include forTablet {
     display: flex;

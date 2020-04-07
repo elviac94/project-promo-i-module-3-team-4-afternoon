@@ -1,16 +1,28 @@
 import React from 'react';
-import '../../stylesheets/form.scss';
+// import '../../stylesheets/form.scss';
 
 class FormFill extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    }
+
+  handleClick() {
+    const fillBottom = document.querySelector('.fill--bottom')
+    const arrow = document.querySelector('.arrow');
+    fillBottom.classList.toggle('hidden');
+    arrow.classList.add('arrow-collapse');
+  }
+
   render(){
       return(
         <div className="form__fill">
-        <div className="fill--top fill--top--active">
+        <div className="fill--top fill--top--active" onClick={this.handleClick}>
           <div className="title--icon">
             <i className="far fa-keyboard fa-lg"></i>
             <h3 className="fill--title">Rellena</h3>
           </div>
-          <a href="g" className="fill--button">
+          <a className="fill--button">
             <div className="arrow"> </div>
           </a>
         </div>
