@@ -4,22 +4,27 @@ import FormFill from './FormFill';
 import Share from './Share';
 
 
-class CardForm extends React.Component {
-    render() {
+const CardForm =(props) => {
         return (
             <div>
               <section className="card--form">
                 <div className="wrapper-general">
                   <form className="complete--form">
                 <Design />
-                <FormFill />
+                <FormFill 
+                  updateName={props.updateName}
+                  updateJob={props.updateJob}
+                  updatePhone={props.updatePhone}
+                  updateEmail={props.updateEmail}
+                  updateLinkedin={props.updateLinkedin}
+                  updateGithub={props.updateGithub}
+                />
                 <Share />
                   </form>
                 </div>
               </section>
             </div>
         )
-    }
 }
 
 export default CardForm;
