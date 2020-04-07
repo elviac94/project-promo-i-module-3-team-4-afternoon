@@ -3,9 +3,7 @@ import '../stylesheets/main.scss';
 import Landing from './Landing';
 import CardMaker from './cards/CardMaker';
 
-
 class App extends React.Component {
-
 
   render() {
     return (
