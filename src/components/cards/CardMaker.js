@@ -17,7 +17,6 @@ class CardMaker extends React.Component {
   }
 }
 
-
   render() {
       return (
         <div className="CardMaker">

@@ -2,16 +2,20 @@ import React from 'react';
 import '../../stylesheets/form.scss';
 
 class Design extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    }
     render() {
         return (
             <div className="form__design">
 
-                <div className="design--top design--top--active">
+                <div className="design--top design--top--active" onClick={this.handleClick}>
                     <div className="title-icon">
                         <i className="far fa-object-ungroup"></i>
                         <h3 className="design-title">diseña</h3>
                     </div>
-                    <a className="arrow"></a>
+                    <div className="arrow"></div>
                 </div>
 
                 <div className="design--bottom">
@@ -21,7 +25,7 @@ class Design extends React.Component {
 
                         <div>
                             <label id="lab-1" htmlFor="color-option1">
-                                <input id="color-option1" type="radio" value="color-option1" name="color-option" />
+                                <input id="color-option1" type="radio" value="color-option1" name="color-option" defaultChecked/>
                                 <div className="c1-1"></div>
                                 <div className="c1-2"></div>
                                 <div className="c1-3"></div>
@@ -51,6 +55,14 @@ class Design extends React.Component {
             </div>
         );
     }
+    //Remove
+    handleClick() {
+        const designBottom = document.querySelector('.design--bottom')
+        designBottom.classList.toggle('hidden');
+        const arrow = document.querySelector('.arrow');
+        arrow.classList.add('arrow-collapse');
+      }
+    
 }
 
 

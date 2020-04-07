@@ -1,16 +1,21 @@
 import React from 'react';
-import '../../stylesheets/form.scss';
+// import '../../stylesheets/form.scss';
 
 class FormFill extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    }
+
   render(){
       return(
         <div className="form__fill">
-        <div className="fill--top fill--top--active">
+        <div className="fill--top fill--top--active" onClick={this.handleClick}>
           <div className="title--icon">
             <i className="far fa-keyboard fa-lg"></i>
             <h3 className="fill--title">Rellena</h3>
           </div>
-          <a href="g" className="fill--button">
+          <a className="fill--button">
             <div className="arrow"> </div>
           </a>
         </div>
@@ -20,7 +25,7 @@ class FormFill extends React.Component{
           <div className="fillform bottom-1">
             <div className="fillform--name">
               <label className="label-fill" htmlFor="firstName">Nombre completo<span className="required">*</span></label>
-              <input placeholder="Sally Jill" id="firstName" type="text" name="firstName" className="input-fill input-validation" required defaultChecked/>
+              <input placeholder="Sally Jill" id="firstName" type="text" name="firstName" className="input-fill input-validation" required/>
               <p className="text-error hidden" id="text-error_name">*Dinos tu nombre por favor.</p>
             </div>
             <div className="fillform--job">
@@ -69,6 +74,14 @@ class FormFill extends React.Component{
       </div>
           
      );
+  }
+
+  // Remove
+  handleClick() {
+    const fillBottom = document.querySelector('.fill--bottom')
+    const arrow = document.querySelector('.arrow');
+    fillBottom.classList.toggle('hidden');
+    arrow.classList.add('arrow-collapse');
   }
 }
 export default FormFill;
