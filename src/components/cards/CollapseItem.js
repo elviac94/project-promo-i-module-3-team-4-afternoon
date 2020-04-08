@@ -12,7 +12,10 @@ class CollapseItem extends React.Component {
 
   render() {
     return (
-        <div id={this.props.id} onClick={this.displayPanel} className={`collapse-item ${this.props.activePanel === this.props.id ? "active" : ""}`}>
+        <div 
+          id={this.props.id} 
+          onClick={this.displayPanel} 
+          className={`collapse-item ${this.props.activePanel === this.props.id ? "active" : ""}`}>
         {this.props.children}
       </div>
     );
