@@ -45,7 +45,7 @@ updateAvatar(img){
           <Header />
           <main className="main-form">
           <section className="card--preview">
-            <CardPreview />
+            <CardPreview avatar={this.state.profile.avatar} />
             </section>
             <CardForm 
             avatar={this.state.profile.avatar} 

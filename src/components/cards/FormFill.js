@@ -3,11 +3,7 @@ import GetAvatar from '../GetAvatar';
 // import '../../stylesheets/form.scss';
 
 class FormFill extends React.Component{
-  constructor(props) {
-    super(props);
-    
-    }
-
+ 
   render(){
       return(
         <div className="form__fill">
