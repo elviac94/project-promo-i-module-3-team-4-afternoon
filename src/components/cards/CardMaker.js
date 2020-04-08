@@ -3,6 +3,7 @@ import CardForm from './CardForm';
 import Header from '../Header';
 import Footer from '../Footer';
 import CardPreview from './CardPreview'
+import defaultImage from '../DefaultImage';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -15,14 +16,36 @@ class CardMaker extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-      }
+        palette: 1,
+        photo: defaultImage
+      },
+      profile: {
+        avatar: defaultImage
+      },
+      isAvatarDefault: true,
     }
+    this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
   }
 
+  updateAvatar(img) {
+    const { profile } = this.state;
+    this.setState(prevState => {
+      let newProfile = { ...profile, avatar: img };
+      let newuserInfo = prevState.userInfo;
+
+      return {
+        profile: newProfile,
+        isAvatarDefault: false,
+        userInfo: { ...newuserInfo, photo: img }
+
+      }
+    });
+  }
+
   updateUserInfo(inputId, inputValue) {
-    if (inputValue === '' && inputId === 'name'){
+    if (inputValue === '' && inputId === 'name') {
       this.setState(prevState => {
         return {
           userInfo: {
@@ -31,7 +54,7 @@ class CardMaker extends React.Component {
           }
         }
       })
-    } else if (inputValue === '' && inputId === 'job'){
+    } else if (inputValue === '' && inputId === 'job') {
       this.setState(prevState => {
         return {
           userInfo: {
@@ -76,9 +99,14 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              cardDetails={this.state.userInfo} />
+              avatar={this.state.profile.avatar}
+              cardDetails={this.state.userInfo}
+            />
           </section>
           <CardForm
+            avatar={this.state.profile.avatar}
+            isAvatarDefault={this.isAvatarDefault}
+            updateAvatar={this.updateAvatar}
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
             updateUserInfoIcon={this.updateUserInfoIcon}

@@ -3,7 +3,6 @@ import Design from './Design';
 import FormFill from './FormFill';
 import Share from './Share';
 
-
 const CardForm = (props) => {
   return (
     <div>
@@ -12,6 +11,9 @@ const CardForm = (props) => {
           <form className="complete--form">
             <Design />
             <FormFill
+              avatar={props.avatar}
+              isAvatarDefault={props.isAvatarDefault}
+              updateAvatar={props.updateAvatar}
               userInfo={props.userInfo}
               updateUserInfo={props.updateUserInfo}
               updateUserInfoIcon={props.updateUserInfoIcon}

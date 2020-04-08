@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from './Input';
+import GetAvatar from '../GetAvatar';
+// import '../../stylesheets/form.scss';
 
 const FormFill = (props) => {
   return (
@@ -8,12 +10,11 @@ const FormFill = (props) => {
         <div className="title--icon">
           <i className="far fa-keyboard fa-lg"></i>
           <h3 className="fill--title">Rellena</h3>
-        </div>
-        <a className="fill--button">
-          <div className="arrow"> </div>
-        </a>
+          </div>
+          <a className="fill--button">
+            <div className="arrow"> </div>
+          </a>
       </div>
-
       <div className="fill--bottom fill--bottom--visible">
         <div className="fillform bottom-1">
           <Input
@@ -42,14 +43,14 @@ const FormFill = (props) => {
           />
         </div>
         <div className="fillform bottom-2">
-          <label className="label-fill" htmlFor="image">Imagen de perfil<span className="required">*</span></label>
-          <div className="bottom-2-box">
-            <button className="buttonform--image js__profile-trigger">Añadir imagen</button>
-            <div className="thumbnail js__profile-preview"></div>
-            <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
-            <label className="label-fill" htmlFor="image"></label>
-            <input id="image-input" type="file" name="image" className="action__hiddenField js__profile-upload-btn"
-              required />
+            <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
+            <div className="bottom-2-box">
+              <GetAvatar
+              avatar={props.avatar}
+              isAvatarDefault={props.isAvatarDefault}
+              updateAvatar={props.updateAvatar}/>
+              <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
+              <label className="label-fill" htmlFor="addimage"></label>
           </div>
           <Input
             id='email'
