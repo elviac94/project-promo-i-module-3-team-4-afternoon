@@ -15,7 +15,7 @@ class CollapseList extends React.Component {
           <CollapseItem collapseTitle = 'Diseña'
             handleCollapse = {this.props.handleCollapse}
             activePanel = {this.props.activePanel}
-            id = 'collapse-1'
+            id = 'collapse-design'
         >
             <Design />
         </CollapseItem>
@@ -23,7 +23,7 @@ class CollapseList extends React.Component {
         <CollapseItem collapseTitle = 'Rellena'
             handleCollapse = {this.props.handleCollapse}
             activePanel = {this.props.activePanel}
-            id = 'collapse-2'
+            id = 'collapse-fill'
         >
             <FormFill />
         </CollapseItem>
@@ -31,7 +31,7 @@ class CollapseList extends React.Component {
         <CollapseItem collapseTitle = 'Comparte'
             handleCollapse = {this.props.handleCollapse}
             activePanel = {this.props.activePanel}
-            id = 'collapse-3'
+            id = 'collapse-share'
         >
             <Share />
         </CollapseItem>

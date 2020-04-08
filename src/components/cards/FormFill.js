@@ -1,7 +1,6 @@
 import React from 'react';
 import Input from './Input';
 import GetAvatar from '../GetAvatar';
-// import '../../stylesheets/form.scss';
 
 const FormFill = (props) => {
   return (
@@ -77,7 +76,7 @@ const FormFill = (props) => {
             input='Linkedin'
             required='required'
             requiredIcon='*'
-            placeholder='linkedin.com/in/unicornfront'
+            placeholder='unicornfront'
             value={props.userInfo.linkedin}
             type='text'
             textError='text-error'
@@ -89,7 +88,7 @@ const FormFill = (props) => {
             input='Github'
             required='required'
             requiredIcon='*'
-            placeholder='@sallyhill'
+            placeholder='sallyhill'
             value={props.userInfo.github}
             type='text'
             textError='text-error'
