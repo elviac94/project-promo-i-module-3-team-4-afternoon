@@ -42,5 +42,7 @@ class CardPreview extends React.Component {
       );
     }
   }
-  
+  CardPreview.defaultProps={
+  avatar: defaultImage
+  }
   export default CardPreview;
