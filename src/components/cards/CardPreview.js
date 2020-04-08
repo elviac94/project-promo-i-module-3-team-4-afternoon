@@ -19,10 +19,10 @@ const CardPreview = (props) => {
           </div>
           <div className="image--preview_picture js__profile-image"></div>
           <div className="image--preview_icons icon-palette1" id="image--preview_icons">
-            <div id="icon1" className="preview icon--1 hidden--fill"></div>
-            <div id="icon2" className="preview icon--2 hidden--fill"></div>
-            <div id="icon3" className="preview icon--3 hidden--fill"></div>
-            <div id="icon4" className="preview icon--4 hidden--fill"></div>
+            <div id="icon-phone" className="preview icon--1 hidden--fill"></div>
+            <div id="icon-email" className="preview icon--2 hidden--fill"></div>
+            <div id="icon-linkedin" className="preview icon--3 hidden--fill"></div>
+            <div id="icon-github" className="preview icon--4 hidden--fill"></div>
           </div>
         </div>
       </div>
