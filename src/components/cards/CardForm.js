@@ -12,7 +12,10 @@ class CardForm extends React.Component {
                 <div className="wrapper-general">
                   <form className="complete--form">
                 <Design />
-                <FormFill />
+                <FormFill
+                 avatar={this.props.avatar}
+                 isAvatarDefault={this.props.isAvatarDefault}
+                 updateAvatar={this.props.updateAvatar} />
                 <Share />
                   </form>
                 </div>

@@ -1,16 +1,17 @@
 import React from 'react';
+import GetAvatar from '../GetAvatar';
 // import '../../stylesheets/form.scss';
 
 class FormFill extends React.Component{
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    
     }
 
   render(){
       return(
         <div className="form__fill">
-        <div className="fill--top fill--top--active" onClick={this.handleClick}>
+        <div className="fill--top fill--top--active" >
           <div className="title--icon">
             <i className="far fa-keyboard fa-lg"></i>
             <h3 className="fill--title">Rellena</h3>
@@ -38,12 +39,13 @@ class FormFill extends React.Component{
           <div className="fillform bottom-2">
             <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
             <div className="bottom-2-box">
-              <button className="buttonform--image js__profile-trigger">Añadir imagen</button>
-              <div className="thumbnail js__profile-preview"></div>
+              <GetAvatar
+              avatar={this.props.avatar}
+              isAvatarDefault={this.props.isAvatarDefault}
+              updateAvatar={this.props.updateAvatar}/>
               <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
               <label className="label-fill" htmlFor="addimage"></label>
-              <input id="image-input" type="file" name="image" className="action__hiddenField js__profile-upload-btn"
-            required/>
+              
           </div>
           <div className="fillform bottom-3">
             <div className="fillform--email">
@@ -76,12 +78,5 @@ class FormFill extends React.Component{
      );
   }
 
-  // Remove
-  handleClick() {
-    const fillBottom = document.querySelector('.fill--bottom')
-    const arrow = document.querySelector('.arrow');
-    fillBottom.classList.toggle('hidden');
-    arrow.classList.add('arrow-collapse');
-  }
 }
 export default FormFill;
