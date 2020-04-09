@@ -5,7 +5,7 @@ import GetAvatar from '../GetAvatar';
 const FormFill = (props) => {
   return (
     <div className="form__fill">
-      <div className="fill--top fill--top--active">
+      {/* <div className="fill--top fill--top--active">
         <div className="title--icon">
           <i className="far fa-keyboard fa-lg"></i>
           <h3 className="fill--title">Rellena</h3>
@@ -13,7 +13,8 @@ const FormFill = (props) => {
           <a className="fill--button">
             <div className="arrow"> </div>
           </a>
-      </div>
+      </div> */}
+
       <div className="fill--bottom fill--bottom--visible">
         <div className="fillform bottom-1">
           <Input

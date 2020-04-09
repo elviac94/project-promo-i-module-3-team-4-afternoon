@@ -4,19 +4,18 @@ import '../../stylesheets/form.scss';
 class Design extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     }
     render() {
         return (
             <div className="form__design">
 
-                <div className="design--top design--top--active" onClick={this.handleClick}>
+                {/* <div className="design--top design--top--active">
                     <div className="title-icon">
                         <i className="far fa-object-ungroup"></i>
                         <h3 className="design-title">diseña</h3>
                     </div>
                     <div className="arrow"></div>
-                </div>
+                </div> */}
 
                 <div className="design--bottom">
                     <p className="design-subtitle">colores</p>
@@ -54,15 +53,7 @@ class Design extends React.Component {
                 </div>
             </div>
         );
-    }
-    //Remove
-    handleClick() {
-        const designBottom = document.querySelector('.design--bottom')
-        designBottom.classList.toggle('hidden');
-        const arrow = document.querySelector('.arrow');
-        arrow.classList.add('arrow-collapse');
-      }
-    
+    }    
 }
 
 

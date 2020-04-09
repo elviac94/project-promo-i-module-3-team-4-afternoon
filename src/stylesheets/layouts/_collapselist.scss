@@ -1,0 +1,61 @@
+.collapse-item {
+  display: none;
+}
+
+.visible {
+  display: block;
+  border-bottom: solid 1px lightgrey;
+  padding-bottom: 20px;
+}
+
+.section-top {
+  border-bottom: solid 1px lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  .title-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .far {
+      margin-right: 10px;
+      color: $primaryColor;
+    }
+
+    .section-title {
+      font-size: 18px;
+      color: $primaryTextColor;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .arrow {
+    width: 16px;
+    height: 18px;
+    background-image: url(../../images/arrow.png);
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  &--active .arrow {
+    transform: rotateX(180deg);
+    animation-name: intro;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+
+    @keyframes intro {
+      from {
+        opacity: 0.2;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}

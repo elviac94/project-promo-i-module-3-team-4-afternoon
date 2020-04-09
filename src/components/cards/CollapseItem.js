@@ -1,4 +1,5 @@
 import React from 'react';
+// import '../../stylesheets/layouts/collapselist.scss';
 
 class CollapseItem extends React.Component {
   constructor(props) {
@@ -12,11 +13,18 @@ class CollapseItem extends React.Component {
 
   render() {
     return (
-        <div 
-          id={this.props.id} 
-          onClick={this.displayPanel} 
-          className={`collapse-item ${this.props.activePanel === this.props.id ? "active" : ""}`}>
-        {this.props.children}
+      <div className="collapse-section">
+        <div id={this.props.id} onClick={this.displayPanel} className="section-top">
+            <div className="title-icon">
+              <i className={this.props.icon}></i>
+              <h3 className="section-title">{this.props.collapseTitle}</h3>
+            </div>
+            <div className={this.props.arrow}></div>
+          </div>
+          <div className={`collapse-item ${this.props.activePanel === this.props.id ? "visible" : ""}`}>
+          {/* && "arrow-collapse"  && arrow ? "arrow-collapse : ""*/}
+          {this.props.children}
+          </div>
       </div>
     );
   }

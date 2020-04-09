@@ -3,58 +3,58 @@
 @import '../utils/mixins';
 
 // ShareTop //
-.share--top {
-    border-bottom: solid 1px lightgrey;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
+// .share--top {
+//     border-bottom: solid 1px lightgrey;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding-bottom: 10px;
+//     padding-top: 10px;
+//     width: 100%;
   
-    .share--icon {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+//     .share--icon {
+//       display: flex;
+//       flex-direction: row;
+//       align-items: center;
   
-      .fas {
-        padding-right: 10px;
-        color: #e17334;
-      }
+//       .fas {
+//         padding-right: 10px;
+//         color: #e17334;
+//       }
   
-      .share--title {
-        text-transform: uppercase;
-        color: $primaryTextColor;
-        font-weight: bold;
-        font-weight: 600;
-      }
-    }
+//       .share--title {
+//         text-transform: uppercase;
+//         color: $primaryTextColor;
+//         font-weight: bold;
+//         font-weight: 600;
+//       }
+//     }
   
-    .arrow {
-      width: 16px;
-      height: 18px;
-      background-image: url(../../images/arrow.png);
-      background-size: contain;
-      cursor: pointer;
-    }
+//     .arrow {
+//       width: 16px;
+//       height: 18px;
+//       background-image: url(../../images/arrow.png);
+//       background-size: contain;
+//       cursor: pointer;
+//     }
   
-    &--active .arrow {
-      transform: rotateX(180deg);
-      animation-name: intro;
-      animation-duration: 3s;
-      animation-iteration-count: 2;
+//     &--active .arrow {
+//       transform: rotateX(180deg);
+//       animation-name: intro;
+//       animation-duration: 3s;
+//       animation-iteration-count: 2;
   
-      @keyframes intro {
-        from {
-          opacity: 0.2;
-        }
+//       @keyframes intro {
+//         from {
+//           opacity: 0.2;
+//         }
   
-        to {
-          opacity: 1;
-        }
-      }
-    }
-}
+//         to {
+//           opacity: 1;
+//         }
+//       }
+//     }
+// }
 
 // ShareBottom: ShareBottomBtnCard //
 .share--bottom {
