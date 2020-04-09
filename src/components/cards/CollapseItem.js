@@ -20,7 +20,6 @@ class CollapseItem extends React.Component {
             </div>
             <div className={`arrow ${this.props.collapsearrow === this.props.id ? "arrow-active" : ""}`}></div>
           </div>
-          {/* <div className={`section-top ${this.props.activePanel === this.props.id ? "section-top-noborder" : ""}`}></div> */}
           <div className={`collapse-item ${this.props.activePanel === this.props.id ? "visible" : ""}`}>
             {this.props.children}
           </div>

@@ -16,7 +16,6 @@
 }
 
 .section-top {
-  // border-bottom: solid 1px lightgrey;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,9 +27,10 @@
     flex-direction: row;
     align-items: center;
 
-    .far {
+    .far, .fas {
       margin-right: 10px;
       color: $primaryColor;
+      font-size: 18px;
     }
 
     .section-title {
