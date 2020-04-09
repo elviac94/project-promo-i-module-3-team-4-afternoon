@@ -105,7 +105,7 @@ class CardMaker extends React.Component {
           </section>
           <CardForm
             avatar={this.state.profile.avatar}
-            isAvatarDefault={this.isAvatarDefault}
+            isAvatarDefault={this.state.isAvatarDefault}
             updateAvatar={this.updateAvatar}
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
