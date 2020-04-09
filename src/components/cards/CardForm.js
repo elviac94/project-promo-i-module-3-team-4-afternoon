@@ -54,5 +54,8 @@ const CardForm = (props) => {
     </div>
   )
 }
+// CardForm.defaultProps = {
+//   isCollapseDefault: 'visible'
+// }
 
 export default CardForm;
