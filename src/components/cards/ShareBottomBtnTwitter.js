@@ -9,8 +9,7 @@ class ShareBottomBtnTwitter extends React.Component {
                     title="Tarjeta de perfil"></a>
                 <div className="twitter--button">
                     <a href="https://adalab.es/" className="twitter--link" title="Compartir en twitter">
-                        <i
-                        className="fab fa-twitter"></i>Compartir en twitter
+                        <i className="fab fa-twitter"></i>Compartir en twitter
                     </a>
                 </div>
             </div>
