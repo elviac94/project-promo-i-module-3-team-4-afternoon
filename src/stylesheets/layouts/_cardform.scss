@@ -1,19 +1,8 @@
-// .hidden {
-//   display: none;
-// }
-// .visible {
-//   display: block;
-//   border-bottom: solid 1px lightgrey;
-//   padding-bottom: 20px;
-// }
-// .arrow-collapse {
-//   transform: rotateX(180deg);
-// }
-
 .main-form {
   @include forTablet {
     display: flex;
     flex-direction: row;
+    height: 80vh; // revisar tras implementar route
   }
 }
 
@@ -259,7 +248,7 @@
 
   &--visible {
     display: block;
-    border-bottom: solid 1px lightgrey;
+    // border-bottom: solid 1px lightgrey;
     padding-bottom: 20px;
   }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../../stylesheets/layouts/collapselist.scss';
 
 class CollapseItem extends React.Component {
   constructor(props) {
@@ -19,11 +18,10 @@ class CollapseItem extends React.Component {
               <i className={this.props.icon}></i>
               <h3 className="section-title">{this.props.collapseTitle}</h3>
             </div>
-            <div className={this.props.arrow}></div>
+            <div className={`arrow ${this.props.collapsearrow === this.props.id ? "arrow-active" : ""}`}></div>
           </div>
           <div className={`collapse-item ${this.props.activePanel === this.props.id ? "visible" : ""}`}>
-          {/* && "arrow-collapse"  && arrow ? "arrow-collapse : ""*/}
-          {this.props.children}
+            {this.props.children}
           </div>
       </div>
     );

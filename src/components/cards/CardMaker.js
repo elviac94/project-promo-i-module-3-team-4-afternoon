@@ -23,7 +23,8 @@ class CardMaker extends React.Component {
         avatar: defaultImage
       },
       isAvatarDefault: true,
-      activePanel: ''
+      activePanel: '',
+      collapsearrow: ''
     }
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
@@ -97,10 +98,10 @@ class CardMaker extends React.Component {
   handleCollapse(targetId) {
     if(targetId !== this.state.activePanel){
       this.setState({activePanel:targetId})
-     
+      this.setState({collapsearrow:targetId})
     } else {
       this.setState({activePanel: ''})
-      
+      this.setState({collapsearrow:''})
     }
   }
 
@@ -124,6 +125,7 @@ class CardMaker extends React.Component {
             updateUserInfoIcon={this.updateUserInfoIcon}
             handleCollapse={this.handleCollapse} 
             activePanel={this.state.activePanel}
+            collapsearrow={this.state.collapsearrow}
           />
         </main>
         <Footer />

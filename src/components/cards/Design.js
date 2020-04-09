@@ -56,9 +56,4 @@ class Design extends React.Component {
     }    
 }
 
-
-
-
-
-
 export default Design;

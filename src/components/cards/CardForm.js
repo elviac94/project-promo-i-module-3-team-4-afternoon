@@ -16,7 +16,7 @@ const CardForm = (props) => {
                             activePanel = {props.activePanel}
                             id = 'collapse-design'
                             icon = 'far fa-object-ungroup'
-                            arrow= 'arrow'
+                            collapsearrow = {props.collapsearrow}
               >
                 <Design />
               </CollapseItem>
@@ -26,15 +26,8 @@ const CardForm = (props) => {
                             activePanel = {props.activePanel}
                             id = 'collapse-fill'
                             icon = 'far fa-keyboard fa-lg'
-                            arrow= 'arrow'
+                            collapsearrow = {props.collapsearrow}
               >
-                {/* <div className="fill--top fill--top--active">
-                  <div className="title--icon">
-                    <i className="far fa-keyboard fa-lg"></i>
-                    <h3 className="fill--title">Rellena</h3>
-                    </div>
-                  <div className="arrow"></div>
-                </div> */}
                 <FormFill
                   avatar={props.avatar}
                   isAvatarDefault={props.isAvatarDefault}
@@ -50,15 +43,8 @@ const CardForm = (props) => {
                             activePanel = {props.activePanel}
                             id = 'collapse-share'
                             icon = 'fas fa-share-alt'
-                            arrow= 'arrow'
+                            collapsearrow = {props.collapsearrow}
               >
-                {/* <div className="share--top share--top--active">
-                  <div className="share--icon">
-                    <i className="fas fa-share-alt"></i>
-                    <h3 className="share--title">comparte</h3>
-                  </div>
-                  <a className="share--button"><div className="arrow"></div></a>
-                </div> */}
                 <Share />
               </CollapseItem>
             </div>
