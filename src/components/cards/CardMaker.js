@@ -97,10 +97,10 @@ class CardMaker extends React.Component {
   handleCollapse(targetId) {
     if(targetId !== this.state.activePanel){
       this.setState({activePanel:targetId})
-      // this.setState({rotatearrow:targetId})
+     
     } else {
       this.setState({activePanel: ''})
-      // this.setState({rotatearrow: ''})
+      
     }
   }
 
