@@ -8,8 +8,15 @@
   padding-bottom: 20px;
 }
 
-.section-top {
+.section-top-border {
   border-bottom: solid 1px lightgrey;
+}
+.section-top-noborder {
+  border-bottom: none;
+}
+
+.section-top {
+  // border-bottom: solid 1px lightgrey;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,12 +47,13 @@
     background-image: url(../../images/arrow.png);
     background-size: contain;
     cursor: pointer;
+    transition: all 0.2s ease;
   }
 
   .arrow-active {
     transform: rotateX(180deg);
     animation-name: intro;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-iteration-count: 2;
 
     @keyframes intro {
