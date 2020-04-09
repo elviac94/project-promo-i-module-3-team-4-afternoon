@@ -9,14 +9,6 @@ class Design extends React.Component {
         return (
             <div className="form__design">
 
-                {/* <div className="design--top design--top--active">
-                    <div className="title-icon">
-                        <i className="far fa-object-ungroup"></i>
-                        <h3 className="design-title">diseña</h3>
-                    </div>
-                    <div className="arrow"></div>
-                </div> */}
-
                 <div className="design--bottom">
                     <p className="design-subtitle">colores</p>
 
