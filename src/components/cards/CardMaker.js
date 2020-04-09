@@ -23,10 +23,13 @@ class CardMaker extends React.Component {
         avatar: defaultImage
       },
       isAvatarDefault: true,
+      activePanel: '',
+      collapsearrow: ''
     }
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
+    this.handleCollapse = this.handleCollapse.bind(this);
   }
 
   updateAvatar(img) {
@@ -92,6 +95,16 @@ class CardMaker extends React.Component {
     }
   }
 
+  handleCollapse(targetId) {
+    if(targetId !== this.state.activePanel){
+      this.setState({activePanel:targetId})
+      this.setState({collapsearrow:targetId})
+    } else {
+      this.setState({activePanel: ''})
+      this.setState({collapsearrow:''})
+    }
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -110,6 +123,9 @@ class CardMaker extends React.Component {
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
             updateUserInfoIcon={this.updateUserInfoIcon}
+            handleCollapse={this.handleCollapse} 
+            activePanel={this.state.activePanel}
+            collapsearrow={this.state.collapsearrow}
           />
         </main>
         <Footer />
