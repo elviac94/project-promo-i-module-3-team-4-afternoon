@@ -18,7 +18,9 @@ const CardForm = (props) => {
                             icon = 'far fa-object-ungroup'
                             collapsearrow = {props.collapsearrow}
               >
-                <Design />
+                <Design 
+                updatePaletteValue = {props.updatePaletteValue}
+                palette={props.palette}/>
               </CollapseItem>
             
               <CollapseItem collapseTitle = 'Rellena'

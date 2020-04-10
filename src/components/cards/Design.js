@@ -1,51 +1,44 @@
 import React from 'react';
+import Palette from './Palette';
+import PaletteInfo from './PaletteInfo';
 import '../../stylesheets/form.scss';
 
 class Design extends React.Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+        this.handleInputValue = this.handleInputValue.bind(this);
+        this.state = {
+            userInfo: {
+                palette: ''
+            }
+
+        }
     }
+
+    handleInputValue(inputName, inputValue) {
+        this.setState(prevState => {
+            return {
+                userInfo: {
+                    ...prevState.userInfo,
+                    [inputName]:inputValue
+                }
+            }
+        })
+    }
+
     render() {
         return (
-            <div className="form__design">
-
-                <div className="design--bottom">
-                    <p className="design-subtitle">colores</p>
-
-                    <div className="color-form">
-
-                        <div>
-                            <label id="lab-1" htmlFor="color-option1">
-                                <input id="color-option1" type="radio" value="color-option1" name="color-option" defaultChecked/>
-                                <div className="c1-1"></div>
-                                <div className="c1-2"></div>
-                                <div className="c1-3"></div>
-                            </label>
-                        </div>
-
-                        <div>
-                            <label id="lab-2" htmlFor="color-option2">
-                                <input id="color-option2" type="radio" value="color-option2" name="color-option" />
-                                <div className="c2-1"></div>
-                                <div className="c2-2"></div>
-                                <div className="c2-3"></div>
-                            </label>
-                        </div>
-
-                        <div>
-                            <label id="lab-3" htmlFor="option3">
-                                <input id="color-option3" type="radio" value="color-option3" name="color-option" />
-                                <div className="c3-1"></div>
-                                <div className="c3-2"></div>
-                                <div className="c3-3"></div>
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
+            <div className="Design">
+                <Palette
+                    handleInputValue={this.handleInputValue}
+                    checked={this.state.userInfo.palette}
+                />
+                <PaletteInfo
+                    colorPalette={this.state.userInfo.palette}
+                />
             </div>
-        );
-    }    
+        )
+    }
 }
 
 export default Design;
