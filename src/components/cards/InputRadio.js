@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const InputRadio = (props) => {
 
-  const updateInputValue = (evt) => {
+  const updatePaletteInfo = (evt) => {
     props.handleInputValue(evt.currentTarget.name,evt.currentTarget.value)
   }
 
@@ -13,7 +14,7 @@ const InputRadio = (props) => {
              name={props.name}
              id={props.id}
              value={props.value}
-             onChange={updateInputValue}
+             onChange={updatePaletteInfo}
              checked={props.checked}
              required
       />

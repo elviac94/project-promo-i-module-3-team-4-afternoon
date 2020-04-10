@@ -8,7 +8,7 @@ class Design extends React.Component {
         super(props);
         this.handleInputValue = this.handleInputValue.bind(this);
         this.state = {
-            userInfo: {
+            paletteInfo: {
                 palette: ''
             }
 
@@ -18,8 +18,8 @@ class Design extends React.Component {
     handleInputValue(inputName, inputValue) {
         this.setState(prevState => {
             return {
-                userInfo: {
-                    ...prevState.userInfo,
+                paletteInfo: {
+                    ...prevState.paletteInfo,
                     [inputName]:inputValue
                 }
             }
@@ -31,10 +31,10 @@ class Design extends React.Component {
             <div className="Design">
                 <Palette
                     handleInputValue={this.handleInputValue}
-                    checked={this.state.userInfo.palette}
+                    checked={this.state.paletteInfo.palette}
                 />
                 <PaletteInfo
-                    colorPalette={this.state.userInfo.palette}
+                    colorPalette={this.state.paletteInfo.palette}
                 />
             </div>
         )

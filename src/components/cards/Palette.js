@@ -19,6 +19,7 @@ const Palette = (props) => {
                                 value="1"
                                 name="palette" //color-choice
                                 handleInputValue={props.handleInputValue}
+                                checked={props.checked === "1" ? true : false}
                             />
                             <div className="c1-1"></div>
                             <div className="c1-2"></div>
@@ -34,6 +35,7 @@ const Palette = (props) => {
                                 value="2"
                                 name="palette"
                                 handleInputValue={props.handleInputValue}
+                                checked={props.checked === "2" ? true : false}
                             />
                             <div className="c2-1"></div>
                             <div className="c2-2"></div>
@@ -49,6 +51,7 @@ const Palette = (props) => {
                                 value="3"
                                 name="palette"
                                 handleInputValue={props.handleInputValue}
+                                checked={props.checked === "3" ? true : false}
                             />
                             <div className="c3-1"></div>
                             <div className="c3-2"></div>

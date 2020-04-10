@@ -19,8 +19,8 @@ const CardForm = (props) => {
                             collapsearrow = {props.collapsearrow}
               >
                 <Design 
-                updatePaletteValue = {props.updatePaletteValue}
-                palette={props.palette}/>
+                paletteInfo={props.paletteInfo}
+                updatePaletteInfo={props.updatePaletteInfo}/>
               </CollapseItem>
             
               <CollapseItem collapseTitle = 'Rellena'
