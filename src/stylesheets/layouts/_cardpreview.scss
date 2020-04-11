@@ -4,7 +4,7 @@
   @include forTablet{
     display:flex;
     flex-direction: row;
-    height: 80vh;  // Para forzar height. A revisar tras implementar route
+    //min-height: 80vh;  // Para forzar height. A revisar tras implementar route
   }
 }
 

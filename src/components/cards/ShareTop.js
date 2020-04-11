@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Componente no necesario (props en el collapsable)
 class ShareTop extends React.Component {
   render() {
     return (
