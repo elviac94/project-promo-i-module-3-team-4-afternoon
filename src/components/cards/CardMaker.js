@@ -23,8 +23,8 @@ class CardMaker extends React.Component {
         avatar: defaultImage
       },
       isAvatarDefault: true,
-      activePanel: '',
-      collapsearrow: ''
+      activePanel: 'collapse-design',
+      collapsearrow: 'collapse-design'
     }
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
