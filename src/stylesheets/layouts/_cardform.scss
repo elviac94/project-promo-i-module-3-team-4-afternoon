@@ -1,10 +1,10 @@
-// .main-form {
-//   @include forTablet {
-//     display: flex;
-//     flex-direction: row;
-//     // height: 80vh; // revisar tras implementar route
-//   }
-// }
+.main-form {
+  @include forTablet {
+    display: flex;
+    flex-direction: row;
+    min-height: 80vh; // revisar tras implementar route
+  }
+}
 
 .card--form {
   padding-top: 20px;
@@ -15,6 +15,7 @@
 }
 
 .complete--form {
+  padding-bottom: 30px;
   @include forTablet {
     width: 330px;
   }
