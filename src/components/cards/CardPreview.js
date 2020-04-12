@@ -3,6 +3,7 @@ import defaultImage from '../DefaultImage';
 
 const CardPreview = (props) => {
   const cardDetails = props.cardDetails
+ 
   return (
     <div className="CardPreview">
       <div className="box--preview">
@@ -10,8 +11,8 @@ const CardPreview = (props) => {
           <i className="far fa-trash-alt"></i> Reset
         </button>
         <div className="image--preview">
-          <div className="image--preview_text color-palette1" id="image--preview_text">
-            <div className="preview--square"></div>
+          <div className={`image--preview_text ${props.palette}`} id="image--preview_text">
+            <div className={`preview--square ${props.palette}`}></div>
             <div className="card--full">
               <h3 className="card--full_name">{cardDetails.name}</h3>
               <p className="card--full_profession">{cardDetails.job}</p>
@@ -32,6 +33,7 @@ const CardPreview = (props) => {
 
   CardPreview.defaultProps={
   avatar: defaultImage,
+  paletteValue: '1',
   userInfo: {
     name: 'Nombre Apellido',
     job: 'Front-end developer',

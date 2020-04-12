@@ -1,44 +1,71 @@
 import React from 'react';
-import Palette from './Palette';
-import PaletteInfo from './PaletteInfo';
 import '../../stylesheets/form.scss';
 
-class Design extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleInputValue = this.handleInputValue.bind(this);
-        this.state = {
-            paletteInfo: {
-                palette: ''
-            }
+const Design = props => {
 
-        }
+    const handleChoice = (evt) => {
+        let target = evt.target
+        props.handleChoice(target)
+        console.log(evt.target)
     }
 
-    handleInputValue(inputName, inputValue) {
-        this.setState(prevState => {
-            return {
-                paletteInfo: {
-                    ...prevState.paletteInfo,
-                    [inputName]:inputValue
-                }
-            }
-        })
-    }
+    return (
 
-    render() {
-        return (
-            <div className="Design">
-                <Palette
-                    handleInputValue={this.handleInputValue}
-                    checked={this.state.paletteInfo.palette}
-                />
-                <PaletteInfo
-                    colorPalette={this.state.paletteInfo.palette}
-                />
-            </div>
-        )
-    }
+        <div className="design--bottom">
+        <h3 className="design-subtitle">Colores</h3>
+         <ul>
+         <li>
+
+          <input
+          className="check" 
+          id="1" 
+          type="radio" 
+          value="1" 
+          name="colorCard" 
+          onClick={handleChoice} 
+          checked={props.palette === '1' ? true : false} 
+          />
+
+          <label className="colorForm">
+              <div className="palette colorbox1"></div>
+              <div className="palette colorbox2"></div>
+              <div className="palette colorbox3"></div>
+             </label>
+
+          </li>
+         <li>
+          <input className="check" 
+          id="2" 
+          type="radio" 
+          value="2" 
+          name="colorCard"
+          onClick={handleChoice}  
+          checked={props.palette === '2' ? true : false}
+          />
+          <label className="colorForm">
+              <div className="palette colorbox4"></div>
+              <div className="palette colorbox5"></div>
+              <div className="palette colorbox6"></div>
+          </label>
+          </li>
+          <li>
+          <input className="check" 
+          id="3" 
+          type="radio" 
+          value="3" 
+          name="colorCard" 
+          checked={props.palette === '3' ? true : false}
+          onClick={handleChoice} />
+          <label className="colorForm">
+              <div className="palette colorbox7"></div>
+              <div className="palette colorbox8"></div>
+              <div className="palette colorbox9"></div>
+          </label>
+         </li>
+         </ul>
+     </div>
+
+    );
 }
 
 export default Design;
