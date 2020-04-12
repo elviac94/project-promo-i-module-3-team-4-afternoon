@@ -3,6 +3,21 @@ import defaultImage from '../DefaultImage';
 
 const CardPreview = (props) => {
   const cardDetails = props.cardDetails
+
+  //Design//
+  let paletteValue= props.palette
+  // esta funcion la hago para asociar el value con las clases que tiene que aplicar, las clases son las de dynamic.scss, falta aplicar a los iconos. Esta función la meto en donde estaban las props.palette ya va a ser la aplicación de esas props. Tbn había que dejar comentadas o quitar los backgrounds-color de cardpreview.sccs pq sino siempre aplicaría esos aunque hicieramos esto
+ const selectColor=()=>{
+    if(paletteValue ==='1'){
+      return ' color-palette1'
+    }
+    if(paletteValue === '2'){
+      return ' color-palette2'
+    }
+    if(paletteValue === '3'){
+      return ' color-palette3'
+    }
+  }
  
   return (
     <div className="CardPreview">
@@ -11,8 +26,8 @@ const CardPreview = (props) => {
           <i className="far fa-trash-alt"></i> Reset
         </button>
         <div className="image--preview">
-          <div className={`image--preview_text ${props.palette}`} id="image--preview_text">
-            <div className={`preview--square ${props.palette}`}></div>
+          <div className={`image--preview_text ${selectColor()}`} id="image--preview_text">
+            <div className={`preview--square ${selectColor()}`}></div>
             <div className="card--full">
               <h3 className="card--full_name">{cardDetails.name}</h3>
               <p className="card--full_profession">{cardDetails.job}</p>

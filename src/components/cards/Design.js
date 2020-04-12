@@ -22,7 +22,7 @@ const Design = props => {
           type="radio" 
           value="1" 
           name="colorCard" 
-          onClick={handleChoice} 
+          onChange={handleChoice} // inputs atienden a fx onChange, salia warning//
           checked={props.palette === '1' ? true : false} 
           />
 
@@ -39,7 +39,7 @@ const Design = props => {
           type="radio" 
           value="2" 
           name="colorCard"
-          onClick={handleChoice}  
+          onChange={handleChoice}  
           checked={props.palette === '2' ? true : false}
           />
           <label className="colorForm">
@@ -55,7 +55,7 @@ const Design = props => {
           value="3" 
           name="colorCard" 
           checked={props.palette === '3' ? true : false}
-          onClick={handleChoice} />
+          onChange={handleChoice} />
           <label className="colorForm">
               <div className="palette colorbox7"></div>
               <div className="palette colorbox8"></div>
