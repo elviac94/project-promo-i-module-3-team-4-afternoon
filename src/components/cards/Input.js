@@ -1,11 +1,15 @@
 import React from 'react';
 
 const Input = (props) => {
+    // console.log(props)
     
     function getData(evt) {
         const id = evt.currentTarget.id;
         const value = evt.currentTarget.value;
+        const input = evt.currentTarget;
+        const message = evt.currentTarget.nextSibling;
         props.handleClick(id, value);
+        props.validateForm(input, message);
     }
 
     return (

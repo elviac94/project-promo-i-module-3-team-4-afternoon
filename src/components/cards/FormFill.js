@@ -3,6 +3,7 @@ import Input from './Input';
 import GetAvatar from '../GetAvatar';
 
 const FormFill = (props) => {
+  // console.log(props)
   return (
     <div className="form__fill">
 
@@ -19,6 +20,7 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Dinos tu nombre por favor.'
             handleClick={props.updateUserInfo}
+            validateForm={props.validateForm}
           />
           <Input
             id='job'
@@ -31,17 +33,18 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Tu trabajo también, gracias.'
             handleClick={props.updateUserInfo}
+            validateForm={props.validateForm}
           />
         </div>
         <div className="fillform bottom-2">
-            <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
-            <div className="bottom-2-box">
-              <GetAvatar
+          <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
+          <div className="bottom-2-box">
+            <GetAvatar
               avatar={props.avatar}
               isAvatarDefault={props.isAvatarDefault}
-              updateAvatar={props.updateAvatar}/>
-              <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
-              <label className="label-fill" htmlFor="addimage"></label>
+              updateAvatar={props.updateAvatar}
+              validateForm={props.validateForm}
+            />
           </div>
           <Input
             id='email'
@@ -52,8 +55,9 @@ const FormFill = (props) => {
             value={props.userInfo.email}
             type='email'
             textError='text-error'
-            errorMessage='*Deja tu email para que puedan contactarte.'
+            errorMessage='*Deja un email correcto para que puedan contactarte.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
           />
           <Input
             id='phone'
@@ -62,6 +66,7 @@ const FormFill = (props) => {
             value={props.userInfo.phone}
             type='tel'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
           />
           <Input
             id='linkedin'
@@ -74,6 +79,7 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Por favor introduce tu Linkedin.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
           />
           <Input
             id='github'
@@ -86,6 +92,7 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Agradecerán ver tu trabajo.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
           />
         </div>
       </div>

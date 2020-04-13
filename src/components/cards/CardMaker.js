@@ -31,6 +31,7 @@ class CardMaker extends React.Component {
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.validateForm = this.validateForm.bind(this);
   }
 
   handleChoice(target) {
@@ -112,6 +113,42 @@ class CardMaker extends React.Component {
     }
   }
 
+  validateForm(input, message) {
+    // console.log(input)
+    if (input.name === "email") {
+      console.log(input.value)
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value)) {
+        message.classList.add('hidden');
+        return (true);
+      } else {
+        message.classList.remove('hidden');
+        return (false);
+      } 
+    } else if (input.name === "image") {
+      const thumbnail = message.nextSibling.nextSibling
+      if (/\.(gif|jpeg|jpg|png)$/i.test(input.value) === false) {
+        
+        console.log(thumbnail)
+        message.classList.remove('hidden');
+        thumbnail.classList.remove("input-correct")
+        thumbnail.classList.add("input-error")
+      } else {
+        message.classList.add('hidden');
+        thumbnail.classList.remove("input-error")
+        thumbnail.classList.add("input-correct")
+      }
+    } else if (input.value !== "") {
+      input.classList.remove("input-error");
+      input.classList.add("input-correct");
+      message.classList.add("hidden")
+      console.log(input.value)
+    } else {
+      input.classList.remove("input-correct");
+      input.classList.add("input-error");
+      message.classList.remove("hidden")
+    };
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -134,6 +171,7 @@ class CardMaker extends React.Component {
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
             updateUserInfoIcon={this.updateUserInfoIcon}
+            validateForm={this.validateForm}
             handleCollapse={this.handleCollapse}
             activePanel={this.state.activePanel}
             collapsearrow={this.state.collapsearrow}

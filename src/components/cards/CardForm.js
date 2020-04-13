@@ -5,6 +5,7 @@ import Share from './Share';
 import CollapseItem from './CollapseItem';
 
 const CardForm = (props) => {
+  // console.log(props)
   return (
     <div>
       <section className="card--form">
@@ -24,31 +25,32 @@ const CardForm = (props) => {
               </CollapseItem>
 
               <CollapseItem collapseTitle='Rellena'
-                  handleCollapse={props.handleCollapse}
-                  activePanel={props.activePanel}
-                  id='collapse-fill'
-                  icon='far fa-keyboard fa-lg'
-                  collapsearrow={props.collapsearrow}
-                >
-                  <FormFill
-                    avatar={props.avatar}
-                    isAvatarDefault={props.isAvatarDefault}
-                    updateAvatar={props.updateAvatar}
-                    userInfo={props.userInfo}
-                    updateUserInfo={props.updateUserInfo}
-                    updateUserInfoIcon={props.updateUserInfoIcon}
-                  />
-                </CollapseItem>
+                handleCollapse={props.handleCollapse}
+                activePanel={props.activePanel}
+                id='collapse-fill'
+                icon='far fa-keyboard fa-lg'
+                collapsearrow={props.collapsearrow}
+              >
+                <FormFill
+                  avatar={props.avatar}
+                  isAvatarDefault={props.isAvatarDefault}
+                  updateAvatar={props.updateAvatar}
+                  userInfo={props.userInfo}
+                  updateUserInfo={props.updateUserInfo}
+                  updateUserInfoIcon={props.updateUserInfoIcon}
+                  validateForm={props.validateForm}
+                />
+              </CollapseItem>
 
-                <CollapseItem collapseTitle='Comparte'
-                  handleCollapse={props.handleCollapse}
-                  activePanel={props.activePanel}
-                  id='collapse-share'
-                  icon='fas fa-share-alt'
-                  collapsearrow={props.collapsearrow}
-                >
-                  <Share />
-                </CollapseItem>
+              <CollapseItem collapseTitle='Comparte'
+                handleCollapse={props.handleCollapse}
+                activePanel={props.activePanel}
+                id='collapse-share'
+                icon='fas fa-share-alt'
+                collapsearrow={props.collapsearrow}
+              >
+                <Share />
+              </CollapseItem>
             </div>
           </form>
         </div>
