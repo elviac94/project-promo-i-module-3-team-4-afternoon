@@ -4,21 +4,32 @@ import defaultImage from '../DefaultImage';
 const CardPreview = (props) => {
   const cardDetails = props.cardDetails
 
-  //Design//
-  let paletteValue= props.palette
-  // esta funcion la hago para asociar el value con las clases que tiene que aplicar, las clases son las de dynamic.scss, falta aplicar a los iconos. Esta función la meto en donde estaban las props.palette ya va a ser la aplicación de esas props. Tbn había que dejar comentadas o quitar los backgrounds-color de cardpreview.sccs pq sino siempre aplicaría esos aunque hicieramos esto
- const selectColor=()=>{
-    if(paletteValue ==='1'){
+  let paletteValue = props.palette
+  const selectColor = () => {
+    if (paletteValue === '1') {
       return ' color-palette1'
     }
-    if(paletteValue === '2'){
+    if (paletteValue === '2') {
       return ' color-palette2'
     }
-    if(paletteValue === '3'){
+    if (paletteValue === '3') {
       return ' color-palette3'
     }
   }
- 
+
+  let paletteIcon = props.palette
+  const selectColorIcon = () => {
+    if (paletteIcon === '1') {
+      return ' icon-palette1'
+    }
+    if (paletteIcon === '2') {
+      return ' icon-palette2'
+    }
+    if (paletteIcon === '3') {
+      return ' icon-palette3'
+    }
+  }
+
   return (
     <div className="CardPreview">
       <div className="box--preview">
@@ -34,7 +45,7 @@ const CardPreview = (props) => {
             </div>
           </div>
           <div className="image--preview_picture js__profile-image" style={{ backgroundImage: `url(${props.avatar})` }} ></div>
-          <div className="image--preview_icons icon-palette1" id="image--preview_icons">
+          <div className={`image--preview_icons ${selectColorIcon()}`} id="image--preview_icons">
             <a id="icon-phone" className="preview icon--1 hidden--fill" href={`tel:${cardDetails.phone}`} target="_blank" title="Teléfono"></a>
             <a id="icon-email" className="preview icon--2 hidden--fill" href={`mailto:${cardDetails.email}`} target="_blank" title="Email"></a>
             <a id="icon-linkedin" className="preview icon--3 hidden--fill" href={`https://www.linkedin.com/in/${cardDetails.linkedin}`} target="_blank" title="Linkedin"></a>
@@ -46,12 +57,12 @@ const CardPreview = (props) => {
   );
 }
 
-  CardPreview.defaultProps={
+CardPreview.defaultProps = {
   avatar: defaultImage,
   paletteValue: '1',
   userInfo: {
     name: 'Nombre Apellido',
     job: 'Front-end developer',
   }
-  }
-  export default CardPreview;
+}
+export default CardPreview;

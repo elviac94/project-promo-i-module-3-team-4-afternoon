@@ -22,7 +22,7 @@ const Design = props => {
           type="radio" 
           value="1" 
           name="colorCard" 
-          onChange={handleChoice} // inputs atienden a fx onChange, salia warning//
+          onChange={handleChoice}
           checked={props.palette === '1' ? true : false} 
           />
 
