@@ -23,7 +23,7 @@
 
 /////////////////////////DESIGN
 
-.design--bottom {
+.design--bottom{
   margin-top: 15px;
   display: flex;
   flex-direction: row;
@@ -34,106 +34,69 @@
     text-transform: uppercase;
     font-size: 14px;
     color: $primaryTextColor;
+
   }
 
-  .color-form {
-    #lab-1 {
+  .check {
+      margin-right: 10px;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+  }
+
+  li {
+      padding-bottom: 20px;
       display: flex;
-      flex-direction: row;
       align-items: center;
-      margin-bottom: 20px;
+  }
 
-      #color-option1 {
-        width: 17px;
-        height: 17px;
-        cursor: pointer;
+  .colorForm  { 
+      display: inline-flex;
+
+      .palette { 
+          width: 30px;
+          height: 25px;
+          display: inline-block;
       }
 
-      .c1-1 {
-        width: 30px;
-        height: 25px;
-        background-color: #114e4e;
-        margin-left: 10px;
+      .colorbox1 {
+          background-color: #114e4e;
       }
 
-      .c1-2 {
-        width: 30px;
-        height: 25px;
-        background-color: #438792;
+      .colorbox2 {
+          background-color: #438792;
       }
 
-      .c1-3 {
-        width: 30px;
-        height: 25px;
-        background-color: #a2deaf;
-      }
-    }
-
-    #lab-2 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 20px;
-
-      #color-option2 {
-        width: 17px;
-        height: 17px;
-        cursor: pointer;
+      .colorbox3 {
+          background-color: #a2deaf;
       }
 
-      .c2-1 {
-        width: 30px;
-        height: 25px;
-        background-color: #420101;
-        margin-left: 10px;
+     .colorbox4 {
+          background-color: #420101;
       }
 
-      .c2-2 {
-        width: 30px;
-        height: 25px;
-        background-color: #bd1010;
+      .colorbox5 {
+          background-color: #bd1010;
       }
 
-      .c2-3 {
-        width: 30px;
-        height: 25px;
-        background-color: #e95626;
-      }
-    }
-
-    #lab-3 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 20px;
-
-      #color-option3 {
-        width: 17px;
-        height: 17px;
-        cursor: pointer;
+      .colorbox6 {
+          background-color: #e95626;
       }
 
-      .c3-1 {
-        width: 30px;
-        height: 25px;
-        background-color: #3e5b65;
-        margin-left: 10px;
+     .colorbox7 {
+          background-color: #3e5b65;
       }
 
-      .c3-2 {
-        width: 30px;
-        height: 25px;
-        background-color: #eab052;
+      .colorbox8 {
+          background-color: #eab052;
       }
 
-      .c3-3 {
-        width: 30px;
-        height: 25px;
-        background-color: #a0c0cf;
+      .colorbox9 {
+          background-color: #a0c0cf;
       }
-    }
   }
 }
+
 
 /////////////////////////FILL
 

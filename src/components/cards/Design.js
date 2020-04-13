@@ -1,51 +1,71 @@
 import React from 'react';
 import '../../stylesheets/form.scss';
 
-class Design extends React.Component {
-  constructor(props) {
-    super(props);
+const Design = props => {
+
+    const handleChoice = (evt) => {
+        let target = evt.target
+        props.handleChoice(target)
+        console.log(evt.target)
     }
-    render() {
-        return (
-            <div className="form__design">
 
-                <div className="design--bottom">
-                    <p className="design-subtitle">colores</p>
+    return (
 
-                    <div className="color-form">
+        <div className="design--bottom">
+        <h3 className="design-subtitle">Colores</h3>
+         <ul>
+         <li>
 
-                        <div>
-                            <label id="lab-1" htmlFor="color-option1">
-                                <input id="color-option1" type="radio" value="color-option1" name="color-option" defaultChecked/>
-                                <div className="c1-1"></div>
-                                <div className="c1-2"></div>
-                                <div className="c1-3"></div>
-                            </label>
-                        </div>
+          <input
+          className="check" 
+          id="1" 
+          type="radio" 
+          value="1" 
+          name="colorCard" 
+          onChange={handleChoice}
+          checked={props.palette === '1' ? true : false} 
+          />
 
-                        <div>
-                            <label id="lab-2" htmlFor="color-option2">
-                                <input id="color-option2" type="radio" value="color-option2" name="color-option" />
-                                <div className="c2-1"></div>
-                                <div className="c2-2"></div>
-                                <div className="c2-3"></div>
-                            </label>
-                        </div>
+          <label className="colorForm">
+              <div className="palette colorbox1"></div>
+              <div className="palette colorbox2"></div>
+              <div className="palette colorbox3"></div>
+             </label>
 
-                        <div>
-                            <label id="lab-3" htmlFor="option3">
-                                <input id="color-option3" type="radio" value="color-option3" name="color-option" />
-                                <div className="c3-1"></div>
-                                <div className="c3-2"></div>
-                                <div className="c3-3"></div>
-                            </label>
-                        </div>
+          </li>
+         <li>
+          <input className="check" 
+          id="2" 
+          type="radio" 
+          value="2" 
+          name="colorCard"
+          onChange={handleChoice}  
+          checked={props.palette === '2' ? true : false}
+          />
+          <label className="colorForm">
+              <div className="palette colorbox4"></div>
+              <div className="palette colorbox5"></div>
+              <div className="palette colorbox6"></div>
+          </label>
+          </li>
+          <li>
+          <input className="check" 
+          id="3" 
+          type="radio" 
+          value="3" 
+          name="colorCard" 
+          checked={props.palette === '3' ? true : false}
+          onChange={handleChoice} />
+          <label className="colorForm">
+              <div className="palette colorbox7"></div>
+              <div className="palette colorbox8"></div>
+              <div className="palette colorbox9"></div>
+          </label>
+         </li>
+         </ul>
+     </div>
 
-                    </div>
-                </div>
-            </div>
-        );
-    }    
+    );
 }
 
 export default Design;

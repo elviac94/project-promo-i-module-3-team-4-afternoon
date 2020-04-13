@@ -9,6 +9,7 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      palette: '1',
       userInfo: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
@@ -16,7 +17,6 @@ class CardMaker extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        palette: 1,
         photo: defaultImage
       },
       profile: {
@@ -26,10 +26,17 @@ class CardMaker extends React.Component {
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design'
     }
+    this.handleChoice = this.handleChoice.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+  }
+
+  handleChoice(target) {
+    this.setState((prevState) => {
+      return (prevState.palette = target.value);
+    });
   }
 
   updateAvatar(img) {
@@ -96,12 +103,12 @@ class CardMaker extends React.Component {
   }
 
   handleCollapse(targetId) {
-    if(targetId !== this.state.activePanel){
-      this.setState({activePanel:targetId})
-      this.setState({collapsearrow:targetId})
+    if (targetId !== this.state.activePanel) {
+      this.setState({ activePanel: targetId })
+      this.setState({ collapsearrow: targetId })
     } else {
-      this.setState({activePanel: ''})
-      this.setState({collapsearrow:''})
+      this.setState({ activePanel: '' })
+      this.setState({ collapsearrow: '' })
     }
   }
 
@@ -112,18 +119,22 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
+              paletteValue=""
+              palette={this.state.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
             />
           </section>
           <CardForm
+            handleChoice={this.handleChoice}
+            palette={this.state.palette}
             avatar={this.state.profile.avatar}
             isAvatarDefault={this.state.isAvatarDefault}
             updateAvatar={this.updateAvatar}
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
             updateUserInfoIcon={this.updateUserInfoIcon}
-            handleCollapse={this.handleCollapse} 
+            handleCollapse={this.handleCollapse}
             activePanel={this.state.activePanel}
             collapsearrow={this.state.collapsearrow}
           />

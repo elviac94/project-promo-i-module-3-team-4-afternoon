@@ -31,19 +31,6 @@
     }
 }
 
-.color-palette2 {
-    .preview--square{
-        background-color: $colorpalette2c2c;
-    }
-    .card--full{
-        h3{
-            color: $colorpalette2c2c;
-        }
-        p{
-            color: $colorpalette2c3c;
-        }
-    }
-}
 
 .color-palette3 {
     .preview--square{
@@ -59,23 +46,6 @@
     }
 }
 
-.icon-palette2{
-    .preview{
-        border: 2px solid $colorpalette2c3c;
-        .icon--1{
-            background-image: url(../../images/mobile-c2.png);
-        }
-        .icon--2{
-            background-image: url(../../images/mail-c2.png);
-        }
-        .icon--3{
-            background-image: url(../../images/linkedin-c2.png);
-        }
-        .icon--4{
-            background-image: url(../../images/github-c2.png);
-        }
-    }
-}
 
 .icon-palette1{
     .preview{
