@@ -1,7 +1,6 @@
 .mainindex__container {
   height: 82vh; // calc(100vh - 90px);
   padding-top: 95px;
-  // padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +8,7 @@
   position: relative;
   
   @include forTablet {
-    height: 90vh;
+    height: 91.2vh;
     padding-top: 100px;
     padding-bottom: 59px;
   }
@@ -135,6 +134,12 @@
     align-items: center;
     position: absolute;
     bottom: 30px;
+
+    &:hover {
+      background-color: white;
+      color: $LandingButtonColor;
+      border: 1px solid $LandingButtonColor;
+    }
 
     @include forTablet {
       bottom: 60px;
