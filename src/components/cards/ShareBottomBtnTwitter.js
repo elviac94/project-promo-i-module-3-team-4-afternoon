@@ -12,7 +12,8 @@ class ShareBottomBtnTwitter extends React.Component {
                     title="Tarjeta de perfil"></a>
                 <div className="twitter--button">
                     {/* Esperando props de la URL de la tarjeta */}
-                <a href={`https://twitter.com/intent/tweet?&text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20de%20visita%2C%20creada%20con%20%23AwesomeProfileCards%3A%20${props.URL}&hashtags=Adalab%2C%20promoIdelisa`} className="twitter--link" title="Compartir en twitter">
+                    {/* {`https://twitter.com/intent/tweet?&text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20de%20visita%2C%20creada%20con%20%23AwesomeProfileCards%3A%20${props.URL}&hashtags=Adalab%2C%20promoIdelisa`} */}
+                <a href="adalab.es" className="twitter--link" title="Compartir en twitter">
                         <i className="fab fa-twitter"></i>Compartir en twitter
                     </a>
                 </div>
