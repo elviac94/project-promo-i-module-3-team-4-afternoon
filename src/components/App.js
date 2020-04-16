@@ -12,10 +12,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <Landing />
-        </Route>
-        <Route exact path="/CardMaker">
-        <CardMaker />
-        </Route>
+          </Route>
+          <Route exact path="/CardMaker">
+            <CardMaker />
+          </Route>
         </Switch>
       </div>
     );
