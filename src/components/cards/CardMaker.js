@@ -31,6 +31,7 @@ class CardMaker extends React.Component {
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.resetInfo=this.resetInfo.bind(this);
   }
 
   handleChoice(target) {
@@ -112,6 +113,29 @@ class CardMaker extends React.Component {
     }
   }
 
+  resetInfo(){
+    console.log('resetInfo')
+    this.setState({
+      palette: '1',
+      userInfo: {
+        name: 'Nombre Apellido',
+        job: 'Front-end developer',
+        email: '',
+        phone: '',
+        linkedin: '',
+        github: '',
+        photo: defaultImage
+      },
+      profile: {
+        avatar: defaultImage
+      },
+      isAvatarDefault: true,
+      activePanel: 'collapse-design',
+      collapsearrow: 'collapse-design'
+
+    })
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -123,6 +147,7 @@ class CardMaker extends React.Component {
               palette={this.state.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
+              resetInfo={this.resetInfo}
             />
           </section>
           <CardForm

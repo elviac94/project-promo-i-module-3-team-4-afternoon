@@ -33,7 +33,7 @@ const CardPreview = (props) => {
   return (
     <div className="CardPreview">
       <div className="box--preview">
-        <button className="button--preview">
+        <button className="button--preview" onClick={props.resetInfo}>
           <i className="far fa-trash-alt"></i> Reset
         </button>
         <div className="image--preview">
