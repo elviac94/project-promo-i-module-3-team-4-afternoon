@@ -112,6 +112,30 @@ class CardMaker extends React.Component {
     }
   }
 
+
+
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('data'));
+    //console.log(data)
+    if (data !== null) {
+      this.setState({
+        userInfo: {
+          palette: data.palette !== '' ? data.palette : '1',
+          name: data.name,
+          job: data.job,
+          email: data.email,
+          phone: data.phone,
+          linkedin: data.linkedin,
+          github: data.github,
+          photo: data.photo
+        }
+      })
+    }
+  }
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -119,7 +143,8 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              paletteValue=""
+              //paletteValue=""
+              //paletteIcon=""
               palette={this.state.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
