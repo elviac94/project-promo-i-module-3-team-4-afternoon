@@ -3,7 +3,6 @@ import Input from './Input';
 import GetAvatar from '../GetAvatar';
 
 const FormFill = (props) => {
-  console.log(props)
 
   const getUserInfoName = () => {
     let name = props.userInfo.name;
