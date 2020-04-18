@@ -112,15 +112,20 @@ class CardMaker extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
 
 
   componentDidMount() {
+    console.log('hola')
     const data = JSON.parse(localStorage.getItem('data'));
     //console.log(data)
     if (data !== null) {
+      console.log('hola')
       this.setState({
         userInfo: {
-          palette: data.palette !== '' ? data.palette : '1',
+          //palette: data.palette !== '' ? data.palette : '1',
           name: data.name,
           job: data.job,
           email: data.email,
@@ -132,9 +137,7 @@ class CardMaker extends React.Component {
       })
     }
   }
-  componentDidUpdate() {
-    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
-  }
+
 
   render() {
     return (
@@ -166,8 +169,9 @@ class CardMaker extends React.Component {
         </main>
         <Footer />
       </div>
-    );
+    )
   }
 }
+
 
 export default CardMaker;
