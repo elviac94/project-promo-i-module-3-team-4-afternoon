@@ -59,11 +59,12 @@ const CardPreview = (props) => {
 
 CardPreview.defaultProps = {
   avatar: defaultImage,
-  paletteValue: '1',
-  paletteIcon: '1',
+  //paletteValue: '1',
+  //paletteIcon: '1',
   userInfo: {
     name: 'Nombre Apellido',
     job: 'Front-end developer',
   }
 }
+
 export default CardPreview;

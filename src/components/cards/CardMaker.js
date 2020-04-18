@@ -9,8 +9,8 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '1',
       userInfo: {
+        palette: '1',
         name: 'Nombre Apellido',
         job: 'Front-end developer',
         email: '',
@@ -34,8 +34,13 @@ class CardMaker extends React.Component {
   }
 
   handleChoice(target) {
-    this.setState((prevState) => {
-      return (prevState.palette = target.value);
+    this.setState(prevState => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          palette: target.value
+        }
+      }
     });
   }
 
@@ -125,15 +130,26 @@ class CardMaker extends React.Component {
       console.log('hola')
       this.setState({
         userInfo: {
-          //palette: data.palette !== '' ? data.palette : '1',
+          palette: data.palette,
           name: data.name,
           job: data.job,
           email: data.email,
           phone: data.phone,
           linkedin: data.linkedin,
           github: data.github,
-          photo: data.photo
-        }
+          photo: data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+/*      validAvatar: data.photo !== defaultImage ? true : false,
+        validUserName: data.name !== '' ? true : false,
+        validPosition: data.job !== '' ? true : false,
+        validEmail: data.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? true : false,
+        validLinkedin: data.linkedin !== '' ? true : false,
+        validGithub: data.github !== '' ? true : false,
+        cardURL: '' */
       })
     }
   }
@@ -146,9 +162,7 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              //paletteValue=""
-              //paletteIcon=""
-              palette={this.state.palette}
+              palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
             />
