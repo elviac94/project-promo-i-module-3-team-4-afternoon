@@ -9,8 +9,8 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '1',
       userInfo: {
+        palette: '1',
         name: 'Nombre Apellido',
         job: 'Front-end developer',
         email: '',
@@ -36,8 +36,13 @@ class CardMaker extends React.Component {
   }
 
   handleChoice(target) {
-    this.setState((prevState) => {
-      return (prevState.palette = target.value);
+    this.setState(prevState => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          palette: target.value
+        }
+      }
     });
   }
 
@@ -119,6 +124,34 @@ class CardMaker extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
+
+
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('data'));
+    if (data !== null) {
+      this.setState({
+        userInfo: {
+          palette: data.palette,
+          name: data.name,
+          job: data.job,
+          email: data.email,
+          phone: data.phone,
+          linkedin: data.linkedin,
+          github: data.github,
+          photo: data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+      })
+    }
+  }
+
+
   resetInfo(){
     this.setState(this.initialState);
     this.updateIcon('email', false);
@@ -134,8 +167,7 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              paletteValue=""
-              palette={this.state.palette}
+              palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
               resetInfo={this.resetInfo}
@@ -157,8 +189,9 @@ class CardMaker extends React.Component {
         </main>
         <Footer />
       </div>
-    );
+    )
   }
 }
+
 
 export default CardMaker;
