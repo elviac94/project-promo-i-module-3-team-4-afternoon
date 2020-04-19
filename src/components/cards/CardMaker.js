@@ -123,11 +123,8 @@ class CardMaker extends React.Component {
 
 
   componentDidMount() {
-    console.log('hola')
     const data = JSON.parse(localStorage.getItem('data'));
-    //console.log(data)
     if (data !== null) {
-      console.log('hola')
       this.setState({
         userInfo: {
           palette: data.palette,
@@ -143,13 +140,6 @@ class CardMaker extends React.Component {
           avatar: data.photo
         },
         isAvatarDefault: data.photo !== defaultImage ? false : true,
-/*      validAvatar: data.photo !== defaultImage ? true : false,
-        validUserName: data.name !== '' ? true : false,
-        validPosition: data.job !== '' ? true : false,
-        validEmail: data.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? true : false,
-        validLinkedin: data.linkedin !== '' ? true : false,
-        validGithub: data.github !== '' ? true : false,
-        cardURL: '' */
       })
     }
   }
