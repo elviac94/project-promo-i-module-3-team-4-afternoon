@@ -26,11 +26,13 @@ class CardMaker extends React.Component {
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design'
     }
+    this.initialState=this.state;
     this.handleChoice = this.handleChoice.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.resetInfo=this.resetInfo.bind(this);
   }
 
   handleChoice(target) {
@@ -91,6 +93,7 @@ class CardMaker extends React.Component {
   }
 
   updateUserInfoIcon(inputId, inputValue) {
+    const addIcon = (inputValue !== '');
     this.setState(prevState => {
       return {
         userInfo: {
@@ -99,8 +102,12 @@ class CardMaker extends React.Component {
         }
       }
     })
-    const InputIcon = document.querySelector(`#icon-${inputId}`);
-    if (inputValue !== '') {
+    this.updateIcon(inputId, addIcon);
+  }
+
+  updateIcon(inputId, addIcon) {
+    const InputIcon = document.querySelector(`#icon-${inputId}`);    
+    if (addIcon) {
       InputIcon.classList.remove('hidden--fill');
     } else {
       InputIcon.classList.add('hidden--fill');
@@ -145,6 +152,14 @@ class CardMaker extends React.Component {
   }
 
 
+  resetInfo(){
+    this.setState(this.initialState);
+    this.updateIcon('email', false);
+    this.updateIcon('phone', false);
+    this.updateIcon('linkedin', false);
+    this.updateIcon('github', false);
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -155,6 +170,7 @@ class CardMaker extends React.Component {
               palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
+              resetInfo={this.resetInfo}
             />
           </section>
           <CardForm
