@@ -148,6 +148,10 @@ class CardMaker extends React.Component {
         },
         isAvatarDefault: data.photo !== defaultImage ? false : true,
       })
+      this.updateIcon('email',true)
+      this.updateIcon('phone',true)
+      this.updateIcon('linkedin',true)
+      this.updateIcon('github',true)
     }
   }
 
