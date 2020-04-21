@@ -25,14 +25,6 @@ class CardMaker extends React.Component {
       isAvatarDefault: true,
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design',
-      // formValidation: {
-      //   name: 'false',
-      //   job: 'false',
-      //   image: 'false',
-      //   email: 'false',
-      //   linkedin: 'false',
-      //   github: 'false'
-      // }
     }
     this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
@@ -43,13 +35,11 @@ class CardMaker extends React.Component {
     this.resetInfo = this.resetInfo.bind(this);
 
     this.validateForm = this.validateForm.bind(this);
-    // this.validateEmail = this.validateEmail.bind(this);
     this.validateAll = this.validateAll.bind(this);
     this.sendData = this.sendData.bind(this);
     this.showURL = this.showURL.bind(this);
     this.inputThumbnail = React.createRef();
     this.inputEmail = React.createRef();
-    // this.inputRef = React.createRef();
     this.errorMessage = React.createRef();
     this.cardContainer = React.createRef();
     this.createdCard = React.createRef();
@@ -199,7 +189,6 @@ class CardMaker extends React.Component {
   validateImage() {
     if
       (this.state.userInfo.photo === defaultImage) {
-      // (/\.(gif|jpeg|jpg|png)$/i.test(this.state.userInfo.photo) === false) {
       this.inputThumbnail.current.classList.remove("input-correct")
       this.inputThumbnail.current.previousSibling.previousSibling.classList.remove('hidden');
       this.inputThumbnail.current.classList.add("input-error")

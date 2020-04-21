@@ -37,8 +37,6 @@ const FormFill = (props) => {
             errorMessage='*Dinos tu nombre por favor.'
             handleClick={props.updateUserInfo}
             validateForm={props.validateForm}
-            // inputRef={props.inputRef}
-            // inputErrorMsg={props.inputErrorMsg}
           />
           <Input
             id='job'
@@ -52,8 +50,6 @@ const FormFill = (props) => {
             errorMessage='*Tu trabajo también, gracias.'
             handleClick={props.updateUserInfo}
             validateForm={props.validateForm}
-            // inputRef={props.inputRef}
-            // inputErrorMsg={props.inputErrorMsg}
           />
         </div>
         <div className="fillform bottom-2">
@@ -65,7 +61,6 @@ const FormFill = (props) => {
               updateAvatar={props.updateAvatar}
               validateForm={props.validateForm}
               inputRef={props.inputThumbnail}
-              // inputErrorMsg={props.inputErrorMsg}
             />
           </div>
           <Input
@@ -106,7 +101,6 @@ const FormFill = (props) => {
             handleClick={props.updateUserInfoIcon}
             validateForm={props.validateForm}
             inputRef={props.inputRef}
-            // inputErrorMsg={props.inputErrorMsg}
           />
           <Input
             id='github'
@@ -121,7 +115,6 @@ const FormFill = (props) => {
             handleClick={props.updateUserInfoIcon}
             validateForm={props.validateForm}
             inputRef={props.inputRef}
-            // inputErrorMsg={props.inputErrorMsg}
           />
         </div>
       </div>
