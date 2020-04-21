@@ -22,7 +22,7 @@ const CardForm = (props) => {
               >
                 <Design
                   handleChoice={props.handleChoice}
-                  palette={props.palette} />
+                  userInfo={props.userInfo.palette} />
               </CollapseItem>
 
               <CollapseItem collapseTitle='Rellena'

@@ -30,6 +30,7 @@ class GetAvatar extends Component {
     getImage() {
       const image = this.fr.result;
       this.props.updateAvatar(image);
+      this.myFileField.current.value='';
     }
   
     getPreview(isDefault, image) {

@@ -3,7 +3,7 @@ import '../../stylesheets/form.scss';
 
 const Design = props => {
 
-    const handleChoice = (evt) => {
+    function handleChoice(evt) {
         let target = evt.target
         props.handleChoice(target)
         console.log(evt.target)
@@ -23,7 +23,7 @@ const Design = props => {
           value="1" 
           name="colorCard" 
           onChange={handleChoice}
-          checked={props.palette === '1' ? true : false} 
+          checked={props.userInfo === '1' ? true : false} 
           />
 
           <label className="colorForm">
@@ -40,7 +40,7 @@ const Design = props => {
           value="2" 
           name="colorCard"
           onChange={handleChoice}  
-          checked={props.palette === '2' ? true : false}
+          checked={props.userInfo === '2' ? true : false}
           />
           <label className="colorForm">
               <div className="palette colorbox4"></div>
@@ -54,7 +54,7 @@ const Design = props => {
           type="radio" 
           value="3" 
           name="colorCard" 
-          checked={props.palette === '3' ? true : false}
+          checked={props.userInfo === '3' ? true : false}
           onChange={handleChoice} />
           <label className="colorForm">
               <div className="palette colorbox7"></div>

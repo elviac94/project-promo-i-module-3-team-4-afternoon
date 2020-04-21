@@ -33,7 +33,7 @@ const CardPreview = (props) => {
   return (
     <div className="CardPreview">
       <div className="box--preview">
-        <button className="button--preview">
+        <button className="button--preview" onClick={props.resetInfo}>
           <i className="far fa-trash-alt"></i> Reset
         </button>
         <div className="image--preview">
@@ -59,10 +59,12 @@ const CardPreview = (props) => {
 
 CardPreview.defaultProps = {
   avatar: defaultImage,
-  paletteValue: '1',
+  //paletteValue: '1',
+  //paletteIcon: '1',
   userInfo: {
     name: 'Nombre Apellido',
     job: 'Front-end developer',
   }
 }
+
 export default CardPreview;

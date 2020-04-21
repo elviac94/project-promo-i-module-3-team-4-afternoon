@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ShareBottomBtnTwitter = (props) => {
+
         return (
             <div className="created-card--container" ref={props.cardContainer}>
                 <div className="border--line"></div>
@@ -8,7 +9,9 @@ const ShareBottomBtnTwitter = (props) => {
                 <a href="" className="created-card--link"
                     title="Tarjeta de perfil" ref={props.createdCard}></a>
                 <div className="twitter--button">
-                    <a href="https://adalab.es/" className="twitter--link" title="Compartir en twitter">
+                    {/* Esperando props de la URL de la tarjeta */}
+                    {/* {`https://twitter.com/intent/tweet?&text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20de%20visita%2C%20creada%20con%20%23AwesomeProfileCards%3A%20${props.URL}&hashtags=Adalab%2C%20promoIdelisa`} */}
+                <a href="https://adalab.es" className="twitter--link" title="Compartir en twitter">
                         <i className="fab fa-twitter"></i>Compartir en twitter
                     </a>
                 </div>

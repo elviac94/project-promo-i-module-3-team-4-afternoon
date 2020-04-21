@@ -9,8 +9,8 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '1',
       userInfo: {
+        palette: '1',
         name: 'Nombre Apellido',
         job: 'Front-end developer',
         email: '',
@@ -37,6 +37,7 @@ class CardMaker extends React.Component {
     this.errorMessage = React.createRef();
     this.cardContainer = React.createRef();
     this.createdCard = React.createRef();
+    this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
@@ -46,11 +47,18 @@ class CardMaker extends React.Component {
     this.validateAll = this.validateAll.bind(this);
     this.sendData = this.sendData.bind(this);
     this.showURL = this.showURL.bind(this);
+    this.resetInfo = this.resetInfo.bind(this);
+
   }
 
   handleChoice(target) {
-    this.setState((prevState) => {
-      return (prevState.palette = target.value);
+    this.setState(prevState => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          palette: target.value
+        }
+      }
     });
   }
 
@@ -101,6 +109,7 @@ class CardMaker extends React.Component {
   }
 
   updateUserInfoIcon(inputId, inputValue) {
+    const addIcon = (inputValue !== '');
     this.setState(prevState => {
       return {
         userInfo: {
@@ -109,8 +118,12 @@ class CardMaker extends React.Component {
         }
       }
     })
+    this.updateIcon(inputId, addIcon);
+  }
+
+  updateIcon(inputId, addIcon) {
     const InputIcon = document.querySelector(`#icon-${inputId}`);
-    if (inputValue !== '') {
+    if (addIcon) {
       InputIcon.classList.remove('hidden--fill');
     } else {
       InputIcon.classList.add('hidden--fill');
@@ -211,7 +224,7 @@ class CardMaker extends React.Component {
   }
 
   validateAll(evt) {
-    const {name, job, image, email, linkedin, github} = this.state.formValidation;
+    const { name, job, image, email, linkedin, github } = this.state.formValidation;
     const errorMessage = this.errorMessage.current;
     const createButton = errorMessage.nextSibling;
     if (name === 'true' && job === 'true' && image === 'true' && email === 'true' && linkedin === 'true' && github === 'true') {
@@ -250,6 +263,45 @@ class CardMaker extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
+
+
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('data'));
+    if (data !== null) {
+      this.setState({
+        userInfo: {
+          palette: data.palette,
+          name: data.name,
+          job: data.job,
+          email: data.email,
+          phone: data.phone,
+          linkedin: data.linkedin,
+          github: data.github,
+          photo: data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+      })
+      this.updateIcon('email', true)
+      this.updateIcon('phone', true)
+      this.updateIcon('linkedin', true)
+      this.updateIcon('github', true)
+    }
+  }
+
+  resetInfo() {
+    this.setState(this.initialState);
+    this.updateIcon('email', false);
+    this.updateIcon('phone', false);
+    this.updateIcon('linkedin', false);
+    this.updateIcon('github', false);
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -257,10 +309,10 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              paletteValue=""
-              palette={this.state.palette}
+              palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
+              resetInfo={this.resetInfo}
             />
           </section>
           <CardForm
@@ -285,7 +337,7 @@ class CardMaker extends React.Component {
         </main>
         <Footer />
       </div>
-    );
+    )
   }
 }
 

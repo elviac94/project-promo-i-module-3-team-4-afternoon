@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../images/logo_awesome.svg'
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
 class Landing extends React.Component {
@@ -36,7 +37,7 @@ class Landing extends React.Component {
               <h3 className="text-item">Comparte</h3>
             </div>
           </div>
-          <a className="mainindex__button" href="./CardMaker.js">Comenzar</a>
+          <Link className="mainindex__button" to="/CardMaker" title="Ir al creador de tarjetas">Comenzar</Link>
           </div>
         </main>
         <Footer />
