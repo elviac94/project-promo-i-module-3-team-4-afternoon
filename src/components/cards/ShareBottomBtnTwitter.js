@@ -1,15 +1,13 @@
 import React from 'react';
 
-class ShareBottomBtnTwitter extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
+const ShareBottomBtnTwitter = (props) => {
+
         return (
-            <div className="created-card--container created-card--container--visible">
+            <div className="created-card--container" ref={props.cardContainer}>
+                <div className="border--line"></div>
                 <h4 className="created-card--title">La tarjeta ha sido creada:</h4>
                 <a href="" className="created-card--link"
-                    title="Tarjeta de perfil"></a>
+                    title="Tarjeta de perfil" ref={props.createdCard}></a>
                 <div className="twitter--button">
                     {/* Esperando props de la URL de la tarjeta */}
                     {/* {`https://twitter.com/intent/tweet?&text=Echa%20un%20vistazo%20a%20mi%20tarjeta%20de%20visita%2C%20creada%20con%20%23AwesomeProfileCards%3A%20${props.URL}&hashtags=Adalab%2C%20promoIdelisa`} */}
@@ -19,7 +17,6 @@ class ShareBottomBtnTwitter extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default ShareBottomBtnTwitter;

@@ -21,6 +21,10 @@ class GetAvatar extends Component {
       const myFile = e.currentTarget.files[0];
       this.fr.addEventListener('load', this.getImage);
       this.fr.readAsDataURL(myFile);
+
+      const input = e.currentTarget.nextSibling.nextSibling.nextSibling;
+      const message = e.currentTarget.nextSibling;
+      this.props.validateForm(input, message);
     }
   
     getImage() {
@@ -40,8 +44,11 @@ class GetAvatar extends Component {
           <button className="buttonform--image js__profile-trigger" type="button" onClick={this.handleFilePicker}>Añadir imagen</button>
           
           <input id="image-input"  name="image" type="file" ref={this.myFileField} className="action__hiddenField js__profile-upload-btn" onChange={this.uploadImage} required />
+
+          <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
+          <label className="label-fill" htmlFor="addimage"></label>
           
-          <div className="thumbnail js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)}></div>
+          <div className="thumbnail input-correct js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)} ref={this.props.inputRef} ></div>
         </div>
       );
     }

@@ -1,18 +1,22 @@
 import React from 'react';
-import ShareBottom from './ShareBottom'
+import ShareBottomBtnCard from './ShareBottomBtnCard';
+import ShareBottomBtnTwitter from './ShareBottomBtnTwitter';
 
-class Share extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+const Share = (props) => {
         return (
             <div className="form__share">
-                <ShareBottom />
-            </div>
+                  <div className="share--bottom share--bottom--visible">
+                    <ShareBottomBtnCard
+                      errorMessage={props.errorMessage}
+                      sendData={props.sendData}
+                    />
+                    <ShareBottomBtnTwitter 
+                      cardContainer={props.cardContainer}
+                      createdCard={props.createdCard}
+                    />
+                  </div>
+                </div>
         )
-    }
 }
 
 export default Share;

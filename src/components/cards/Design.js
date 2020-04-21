@@ -6,7 +6,6 @@ const Design = props => {
     function handleChoice(evt) {
         let target = evt.target
         props.handleChoice(target)
-        console.log(evt.target)
     }
 
     return (
