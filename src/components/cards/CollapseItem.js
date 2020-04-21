@@ -8,6 +8,7 @@ class CollapseItem extends React.Component {
 
   displayPanel(evt) {
     this.props.handleCollapse(evt.currentTarget.id)
+    this.props.validateAll(evt)
   }
 
   render() {

@@ -33,6 +33,7 @@
       color: white;
       text-transform: uppercase;
       font-weight: 600;
+      cursor: pointer;
       
       .far {
         padding-right: 10px;
@@ -42,6 +43,7 @@
   
       &--active {
         background-color: #d5d5d5;
+        cursor: auto;
       }
   
   

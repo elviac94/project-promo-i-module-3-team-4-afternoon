@@ -19,8 +19,10 @@ const FormFill = (props) => {
             type='text'
             textError='text-error'
             errorMessage='*Dinos tu nombre por favor.'
+            
             handleClick={props.updateUserInfo}
             validateForm={props.validateForm}
+            
           />
           <Input
             id='job'
@@ -62,6 +64,7 @@ const FormFill = (props) => {
           <Input
             id='phone'
             input='Teléfono'
+            required=''
             placeholder='660632407'
             value={props.userInfo.phone}
             type='tel'

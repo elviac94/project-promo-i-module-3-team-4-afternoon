@@ -10,7 +10,7 @@ const CardForm = (props) => {
     <div>
       <section className="card--form">
         <div className="wrapper-general">
-          <form className="complete--form">
+          <form className="complete--form" onChange={props.ValidateAll}>
             <div className="collapse-list">
               <CollapseItem collapseTitle='Diseña'
                 handleCollapse={props.handleCollapse}
@@ -18,6 +18,7 @@ const CardForm = (props) => {
                 id='collapse-design'
                 icon='far fa-object-ungroup'
                 collapsearrow={props.collapsearrow}
+                validateAll={props.validateAll}
               >
                 <Design
                   handleChoice={props.handleChoice}
@@ -30,6 +31,7 @@ const CardForm = (props) => {
                 id='collapse-fill'
                 icon='far fa-keyboard fa-lg'
                 collapsearrow={props.collapsearrow}
+                validateAll={props.validateAll}
               >
                 <FormFill
                   avatar={props.avatar}
@@ -48,8 +50,14 @@ const CardForm = (props) => {
                 id='collapse-share'
                 icon='fas fa-share-alt'
                 collapsearrow={props.collapsearrow}
+                validateAll={props.validateAll}
               >
-                <Share />
+                <Share
+                  errorMessage={props.errorMessage}
+                  cardContainer={props.cardContainer}
+                  sendData={props.sendData}
+                  createdCard={props.createdCard}
+                />
               </CollapseItem>
             </div>
           </form>
