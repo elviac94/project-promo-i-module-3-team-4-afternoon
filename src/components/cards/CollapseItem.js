@@ -8,7 +8,9 @@ class CollapseItem extends React.Component {
 
   displayPanel(evt) {
     this.props.handleCollapse(evt.currentTarget.id)
-    this.props.validateAll(evt)
+    if(evt.currentTarget.id === 'collapse-share') {
+      this.props.validateAll(evt)
+    } 
   }
 
   render() {

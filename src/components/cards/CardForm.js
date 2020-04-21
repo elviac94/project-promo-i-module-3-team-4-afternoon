@@ -5,7 +5,6 @@ import Share from './Share';
 import CollapseItem from './CollapseItem';
 
 const CardForm = (props) => {
-  // console.log(props)
   return (
     <div>
       <section className="card--form">
@@ -18,7 +17,7 @@ const CardForm = (props) => {
                 id='collapse-design'
                 icon='far fa-object-ungroup'
                 collapsearrow={props.collapsearrow}
-                validateAll={props.validateAll}
+                validateAll=''
               >
                 <Design
                   handleChoice={props.handleChoice}
@@ -31,7 +30,7 @@ const CardForm = (props) => {
                 id='collapse-fill'
                 icon='far fa-keyboard fa-lg'
                 collapsearrow={props.collapsearrow}
-                validateAll={props.validateAll}
+                validateAll=''
               >
                 <FormFill
                   avatar={props.avatar}
@@ -41,6 +40,10 @@ const CardForm = (props) => {
                   updateUserInfo={props.updateUserInfo}
                   updateUserInfoIcon={props.updateUserInfoIcon}
                   validateForm={props.validateForm}
+                  inputEmail={props.inputEmail}
+                  inputErrorEmail={props.inputErrorEmail}
+                  inputThumbnail={props.inputThumbnail}
+                  inputRef={props.inputRef}
                 />
               </CollapseItem>
 

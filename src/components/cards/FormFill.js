@@ -3,7 +3,6 @@ import Input from './Input';
 import GetAvatar from '../GetAvatar';
 
 const FormFill = (props) => {
-  // console.log(props)
 
   const getUserInfoName = () => {
     let name = props.userInfo.name;
@@ -36,10 +35,10 @@ const FormFill = (props) => {
             type='text'
             textError='text-error'
             errorMessage='*Dinos tu nombre por favor.'
-            
             handleClick={props.updateUserInfo}
             validateForm={props.validateForm}
-            
+            // inputRef={props.inputRef}
+            // inputErrorMsg={props.inputErrorMsg}
           />
           <Input
             id='job'
@@ -53,6 +52,8 @@ const FormFill = (props) => {
             errorMessage='*Tu trabajo también, gracias.'
             handleClick={props.updateUserInfo}
             validateForm={props.validateForm}
+            // inputRef={props.inputRef}
+            // inputErrorMsg={props.inputErrorMsg}
           />
         </div>
         <div className="fillform bottom-2">
@@ -63,6 +64,8 @@ const FormFill = (props) => {
               isAvatarDefault={props.isAvatarDefault}
               updateAvatar={props.updateAvatar}
               validateForm={props.validateForm}
+              inputRef={props.inputThumbnail}
+              // inputErrorMsg={props.inputErrorMsg}
             />
           </div>
           <Input
@@ -77,6 +80,8 @@ const FormFill = (props) => {
             errorMessage='*Deja un email correcto para que puedan contactarte.'
             handleClick={props.updateUserInfoIcon}
             validateForm={props.validateForm}
+            inputRef={props.inputEmail}
+            inputErrorMsg={props.inputErrorEmail}
           />
           <Input
             id='phone'
@@ -100,6 +105,8 @@ const FormFill = (props) => {
             errorMessage='*Por favor introduce tu Linkedin.'
             handleClick={props.updateUserInfoIcon}
             validateForm={props.validateForm}
+            inputRef={props.inputRef}
+            // inputErrorMsg={props.inputErrorMsg}
           />
           <Input
             id='github'
@@ -113,6 +120,8 @@ const FormFill = (props) => {
             errorMessage='*Agradecerán ver tu trabajo.'
             handleClick={props.updateUserInfoIcon}
             validateForm={props.validateForm}
+            inputRef={props.inputRef}
+            // inputErrorMsg={props.inputErrorMsg}
           />
         </div>
       </div>

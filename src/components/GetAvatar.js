@@ -24,7 +24,7 @@ class GetAvatar extends Component {
 
       const input = e.currentTarget;
       const message = e.currentTarget.nextSibling;
-      this.props.validateForm(input, message);
+      // this.props.validateForm(input, message);
     }
   
     getImage() {
@@ -48,7 +48,7 @@ class GetAvatar extends Component {
           <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
           <label className="label-fill" htmlFor="addimage"></label>
           
-          <div className="thumbnail input-correct js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)}></div>
+          <div className="thumbnail input-correct js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)} ref={this.props.inputRef} ></div>
         </div>
       );
     }

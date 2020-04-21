@@ -34,6 +34,9 @@ class CardMaker extends React.Component {
         github: 'false'
       }
     }
+    this.inputThumbnail = React.createRef();
+    this.inputEmail = React.createRef();
+    this.inputRef = React.createRef();
     this.errorMessage = React.createRef();
     this.cardContainer = React.createRef();
     this.createdCard = React.createRef();
@@ -44,11 +47,12 @@ class CardMaker extends React.Component {
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
     this.validateForm = this.validateForm.bind(this);
+    // this.validateEmail = this.validateEmail.bind(this);
+
     this.validateAll = this.validateAll.bind(this);
     this.sendData = this.sendData.bind(this);
     this.showURL = this.showURL.bind(this);
     this.resetInfo = this.resetInfo.bind(this);
-
   }
 
   handleChoice(target) {
@@ -140,94 +144,69 @@ class CardMaker extends React.Component {
     }
   }
 
-  validateForm(input, message) {
-    if (input.name === "email") {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value)) {
-        input.classList.remove("input-error");
-        input.classList.add("input-correct");
-        message.classList.add("hidden")
-        this.setState((prevState => {
-          return {
-            formValidation: {
-              ...prevState.formValidation,
-              email: 'true'
-            }
-          }
-        }))
-      } else {
-        input.classList.remove("input-correct");
-        message.classList.remove("hidden")
-        input.classList.add("input-error");
-        this.setState((prevState => {
-          return {
-            formValidation: {
-              ...prevState.formValidation,
-              email: 'false'
-            }
-          }
-        }))
-      }
-    } else if (input.name === "image") {
-      const thumbnail = message.nextSibling.nextSibling
-      if (/\.(gif|jpeg|jpg|png)$/i.test(input.value) === false) {
-        thumbnail.classList.remove("input-correct")
-        message.classList.remove('hidden');
-        thumbnail.classList.add("input-error")
-        this.setState((prevState => {
-          return {
-            formValidation: {
-              ...prevState.formValidation,
-              image: 'false'
-            }
-          }
-        }))
-      } else {
-        thumbnail.classList.remove("input-error")
-        thumbnail.classList.add("input-correct")
-        message.classList.add('hidden');
-        this.setState((prevState => {
-          return {
-            formValidation: {
-              ...prevState.formValidation,
-              image: 'true'
-            }
-          }
-        }))
-      }
-    } else if (input.value !== "") {
-      input.classList.remove("input-error");
-      input.classList.add("input-correct");
-      message.classList.add("hidden")
-      this.setState((prevState => {
-        return {
-          formValidation: {
-            ...prevState.formValidation,
-            [input.name]: 'true'
-          }
-        }
-      }))
+  validateEmail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.userInfo.email) === true) {
+      this.inputEmail.current.classList.remove("input-error");
+      this.inputEmail.current.classList.add("input-correct");
+      this.inputEmail.current.nextSibling.classList.add("hidden")
+      return true
     } else {
-      input.classList.remove("input-correct");
-      message.classList.remove("hidden")
-      input.classList.add("input-error");
-      this.setState((prevState => {
-        return {
-          formValidation: {
-            ...prevState.formValidation,
-            [input.name]: 'false'
-          }
-        }
-      }))
-    };
+      this.inputEmail.current.classList.remove("input-correct");
+      this.inputEmail.current.nextSibling.classList.remove("hidden")
+      this.inputEmail.current.classList.add("input-error");
+      return false
+    }
+  }
 
-    // this.validateAll(input)
+  validateImage() {
+    if 
+    (this.state.userInfo.photo === defaultImage) {
+    // (/\.(gif|jpeg|jpg|png)$/i.test(this.state.userInfo.photo) === false) {
+      this.inputThumbnail.current.classList.remove("input-correct")
+      this.inputThumbnail.current.previousSibling.previousSibling.classList.remove('hidden');
+      this.inputThumbnail.current.classList.add("input-error")
+      return false
+    } else {
+      this.inputThumbnail.current.classList.remove("input-error")
+      this.inputThumbnail.current.classList.add("input-correct")
+      this.inputThumbnail.current.previousSibling.previousSibling.classList.add('hidden');
+      return true
+    }
+  }
+
+  validateInputs() {
+    const inputFill = document.querySelectorAll('.input-fill');
+    for (let myInput of inputFill) {
+      if (myInput.value === "" && myInput.required !== false) {
+        myInput.classList.remove("input-correct");
+        myInput.classList.add("input-error");
+        myInput.nextSibling.classList.remove("hidden");
+      } else {
+        myInput.classList.remove("input-error");
+        myInput.nextSibling.classList.add("hidden");
+        myInput.classList.add("input-correct");
+      };
+    }
+  }
+
+  validateForm(input) {
+    console.log(input)
+    if (input.name !== 'email' && input.value !== '') {
+      input.classList.remove("input-error");
+      input.nextSibling.classList.add("hidden");
+      input.classList.add("input-correct");
+    }
   }
 
   validateAll(evt) {
-    const { name, job, image, email, linkedin, github } = this.state.formValidation;
+    this.validateEmail()
+    this.validateImage()
+    this.validateInputs()
+    console.log('validateInputs', this.validateInputs())
+    const { name, job, image, email, linkedin, github } = this.state.userInfo;
     const errorMessage = this.errorMessage.current;
     const createButton = errorMessage.nextSibling;
-    if (name === 'true' && job === 'true' && image === 'true' && email === 'true' && linkedin === 'true' && github === 'true') {
+    if (this.validateEmail() === true && this.validateImage() === true && name !== '' && job !== '' && linkedin !== '' && github !== '') {
       errorMessage.classList.add('hidden')
       createButton.classList.remove('create-card--button--active')
       createButton.disabled = false
@@ -265,8 +244,8 @@ class CardMaker extends React.Component {
 
   componentDidUpdate() {
     localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+    // this.validateAll()
   }
-
 
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('data'));
@@ -333,6 +312,9 @@ class CardMaker extends React.Component {
             cardContainer={this.cardContainer}
             sendData={this.sendData}
             createdCard={this.createdCard}
+            inputEmail={this.inputEmail}
+            inputThumbnail={this.inputThumbnail}
+            inputRef={this.inputRef}
           />
         </main>
         <Footer />
