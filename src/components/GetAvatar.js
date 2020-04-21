@@ -22,9 +22,9 @@ class GetAvatar extends Component {
       this.fr.addEventListener('load', this.getImage);
       this.fr.readAsDataURL(myFile);
 
-      const input = e.currentTarget;
+      const input = e.currentTarget.nextSibling.nextSibling.nextSibling;
       const message = e.currentTarget.nextSibling;
-      // this.props.validateForm(input, message);
+      this.props.validateForm(input, message);
     }
   
     getImage() {
