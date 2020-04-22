@@ -1,18 +1,21 @@
 import React from 'react';
 
-class ShareBottomBtnCard extends React.Component {
-    render() {
+const ShareBottomBtnCard = (props) => {
+
+    function handleClick() {
+        props.sendData()
+    }
+
         return (
             <div>
-                <p id="global-error" className="text-error hidden">Revisa los campos marcados en rojo.</p>
-                <button className="create-card--button" type="button">
+                <p id="global-error" className="text-error hidden" ref={props.errorMessage}>Revisa los campos marcados en rojo.</p>
+                <button className="create-card--button create-card--button--active" type="button" onClick={handleClick}>
                     <i className="far fa-address-card"></i>
                         Crear tarjeta
             </button>
             
             </div>
         )
-    }
 }
 
 export default ShareBottomBtnCard;

@@ -3,6 +3,23 @@ import Input from './Input';
 import GetAvatar from '../GetAvatar';
 
 const FormFill = (props) => {
+
+  const getUserInfoName = () => {
+    let name = props.userInfo.name;
+    if (name === 'Nombre Apellido') {
+      name = '';
+    }
+    return name;
+  };
+
+  const getUserInfoJob = () => {
+    let job = props.userInfo.job;
+    if (job === 'Front-end developer') {
+      job = '';
+    }
+    return job;
+  };
+
   return (
     <div className="form__fill">
 
@@ -14,11 +31,12 @@ const FormFill = (props) => {
             required='required'
             requiredIcon='*'
             placeholder='Sally Jill'
-            value={props.userInfo.name}
+            value={getUserInfoName()}
             type='text'
             textError='text-error'
             errorMessage='*Dinos tu nombre por favor.'
             handleClick={props.updateUserInfo}
+            validateForm={props.validateForm}
           />
           <Input
             id='job'
@@ -26,22 +44,24 @@ const FormFill = (props) => {
             required='required'
             requiredIcon='*'
             placeholder='Front-end unicorn'
-            value={props.userInfo.job}
+            value={getUserInfoJob()}
             type='text'
             textError='text-error'
             errorMessage='*Tu trabajo también, gracias.'
             handleClick={props.updateUserInfo}
+            validateForm={props.validateForm}
           />
         </div>
         <div className="fillform bottom-2">
-            <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
-            <div className="bottom-2-box">
-              <GetAvatar
+          <label className="label-fill" htmlFor="addimage">Imagen de perfil<span className="required">*</span></label>
+          <div className="bottom-2-box">
+            <GetAvatar
               avatar={props.avatar}
               isAvatarDefault={props.isAvatarDefault}
-              updateAvatar={props.updateAvatar}/>
-              <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
-              <label className="label-fill" htmlFor="addimage"></label>
+              updateAvatar={props.updateAvatar}
+              validateForm={props.validateForm}
+              inputRef={props.inputThumbnail}
+            />
           </div>
           <Input
             id='email'
@@ -52,16 +72,21 @@ const FormFill = (props) => {
             value={props.userInfo.email}
             type='email'
             textError='text-error'
-            errorMessage='*Deja tu email para que puedan contactarte.'
+            errorMessage='*Deja un email correcto para que puedan contactarte.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
+            inputRef={props.inputEmail}
+            inputErrorMsg={props.inputErrorEmail}
           />
           <Input
             id='phone'
             input='Teléfono'
+            required=''
             placeholder='660632407'
             value={props.userInfo.phone}
             type='tel'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
           />
           <Input
             id='linkedin'
@@ -74,6 +99,8 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Por favor introduce tu Linkedin.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
+            inputRef={props.inputRef}
           />
           <Input
             id='github'
@@ -86,6 +113,8 @@ const FormFill = (props) => {
             textError='text-error'
             errorMessage='*Agradecerán ver tu trabajo.'
             handleClick={props.updateUserInfoIcon}
+            validateForm={props.validateForm}
+            inputRef={props.inputRef}
           />
         </div>
       </div>

@@ -9,7 +9,7 @@ const CardForm = (props) => {
     <div>
       <section className="card--form">
         <div className="wrapper-general">
-          <form className="complete--form">
+          <form className="complete--form" onChange={props.ValidateAll}>
             <div className="collapse-list">
               <CollapseItem collapseTitle='Diseña'
                 handleCollapse={props.handleCollapse}
@@ -17,38 +17,51 @@ const CardForm = (props) => {
                 id='collapse-design'
                 icon='far fa-object-ungroup'
                 collapsearrow={props.collapsearrow}
+                validateAll=''
               >
                 <Design
                   handleChoice={props.handleChoice}
-                  palette={props.palette} />
+                  userInfo={props.userInfo.palette} />
               </CollapseItem>
 
               <CollapseItem collapseTitle='Rellena'
-                  handleCollapse={props.handleCollapse}
-                  activePanel={props.activePanel}
-                  id='collapse-fill'
-                  icon='far fa-keyboard fa-lg'
-                  collapsearrow={props.collapsearrow}
-                >
-                  <FormFill
-                    avatar={props.avatar}
-                    isAvatarDefault={props.isAvatarDefault}
-                    updateAvatar={props.updateAvatar}
-                    userInfo={props.userInfo}
-                    updateUserInfo={props.updateUserInfo}
-                    updateUserInfoIcon={props.updateUserInfoIcon}
-                  />
-                </CollapseItem>
+                handleCollapse={props.handleCollapse}
+                activePanel={props.activePanel}
+                id='collapse-fill'
+                icon='far fa-keyboard fa-lg'
+                collapsearrow={props.collapsearrow}
+                validateAll=''
+              >
+                <FormFill
+                  avatar={props.avatar}
+                  isAvatarDefault={props.isAvatarDefault}
+                  updateAvatar={props.updateAvatar}
+                  userInfo={props.userInfo}
+                  updateUserInfo={props.updateUserInfo}
+                  updateUserInfoIcon={props.updateUserInfoIcon}
+                  validateForm={props.validateForm}
+                  inputEmail={props.inputEmail}
+                  inputErrorEmail={props.inputErrorEmail}
+                  inputThumbnail={props.inputThumbnail}
+                  inputRef={props.inputRef}
+                />
+              </CollapseItem>
 
-                <CollapseItem collapseTitle='Comparte'
-                  handleCollapse={props.handleCollapse}
-                  activePanel={props.activePanel}
-                  id='collapse-share'
-                  icon='fas fa-share-alt'
-                  collapsearrow={props.collapsearrow}
-                >
-                  <Share />
-                </CollapseItem>
+              <CollapseItem collapseTitle='Comparte'
+                handleCollapse={props.handleCollapse}
+                activePanel={props.activePanel}
+                id='collapse-share'
+                icon='fas fa-share-alt'
+                collapsearrow={props.collapsearrow}
+                validateAll={props.validateAll}
+              >
+                <Share
+                  errorMessage={props.errorMessage}
+                  cardContainer={props.cardContainer}
+                  sendData={props.sendData}
+                  createdCard={props.createdCard}
+                />
+              </CollapseItem>
             </div>
           </form>
         </div>

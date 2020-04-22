@@ -9,8 +9,8 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '1',
       userInfo: {
+        palette: '1',
         name: 'Nombre Apellido',
         job: 'Front-end developer',
         email: '',
@@ -24,18 +24,35 @@ class CardMaker extends React.Component {
       },
       isAvatarDefault: true,
       activePanel: 'collapse-design',
-      collapsearrow: 'collapse-design'
+      collapsearrow: 'collapse-design',
     }
+    this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.updateUserInfoIcon = this.updateUserInfoIcon.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.resetInfo = this.resetInfo.bind(this);
+
+    this.validateForm = this.validateForm.bind(this);
+    this.validateAll = this.validateAll.bind(this);
+    this.sendData = this.sendData.bind(this);
+    this.showURL = this.showURL.bind(this);
+    this.inputThumbnail = React.createRef();
+    this.inputEmail = React.createRef();
+    this.errorMessage = React.createRef();
+    this.cardContainer = React.createRef();
+    this.createdCard = React.createRef();
   }
 
   handleChoice(target) {
-    this.setState((prevState) => {
-      return (prevState.palette = target.value);
+    this.setState(prevState => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          palette: target.value
+        }
+      }
     });
   }
 
@@ -86,6 +103,7 @@ class CardMaker extends React.Component {
   }
 
   updateUserInfoIcon(inputId, inputValue) {
+    const addIcon = (inputValue !== '');
     this.setState(prevState => {
       return {
         userInfo: {
@@ -94,8 +112,12 @@ class CardMaker extends React.Component {
         }
       }
     })
+    this.updateIcon(inputId, addIcon);
+  }
+
+  updateIcon(inputId, addIcon) {
     const InputIcon = document.querySelector(`#icon-${inputId}`);
-    if (inputValue !== '') {
+    if (addIcon) {
       InputIcon.classList.remove('hidden--fill');
     } else {
       InputIcon.classList.add('hidden--fill');
@@ -112,6 +134,145 @@ class CardMaker extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('data', JSON.stringify(this.state.userInfo));
+  }
+
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('data'));
+    if (data !== null) {
+      this.setState({
+        userInfo: {
+          palette: data.palette,
+          name: data.name,
+          job: data.job,
+          email: data.email,
+          phone: data.phone,
+          linkedin: data.linkedin,
+          github: data.github,
+          photo: data.photo !== '' ? data.photo : defaultImage
+        },
+        profile: {
+          avatar: data.photo
+        },
+        isAvatarDefault: data.photo !== defaultImage ? false : true,
+      })
+      this.updateIcon('email', true)
+      this.updateIcon('phone', true)
+      this.updateIcon('linkedin', true)
+      this.updateIcon('github', true)
+    }
+  }
+
+  resetInfo() {
+    this.setState(this.initialState);
+    this.updateIcon('email', false);
+    this.updateIcon('phone', false);
+    this.updateIcon('linkedin', false);
+    this.updateIcon('github', false);
+  }
+
+  validateEmail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.userInfo.email) === true) {
+      this.inputEmail.current.classList.remove("input-error");
+      this.inputEmail.current.classList.add("input-correct");
+      this.inputEmail.current.nextSibling.classList.add("hidden")
+      return true
+    } else {
+      this.inputEmail.current.classList.remove("input-correct");
+      this.inputEmail.current.nextSibling.classList.remove("hidden")
+      this.inputEmail.current.classList.add("input-error");
+      return false
+    }
+  }
+
+  validateImage() {
+    if
+      (this.state.userInfo.photo === defaultImage) {
+      this.inputThumbnail.current.classList.remove("input-correct")
+      this.inputThumbnail.current.previousSibling.previousSibling.classList.remove('hidden');
+      this.inputThumbnail.current.classList.add("input-error")
+      return false
+    } else {
+      this.inputThumbnail.current.classList.remove("input-error")
+      this.inputThumbnail.current.classList.add("input-correct")
+      this.inputThumbnail.current.previousSibling.previousSibling.classList.add('hidden');
+      return true
+    }
+  }
+
+  validateInputs() {
+    const inputFill = document.querySelectorAll('.input-fill');
+    for (let myInput of inputFill) {
+      if (myInput.value === "" && myInput.required !== false) {
+        myInput.classList.remove("input-correct");
+        myInput.classList.add("input-error");
+        myInput.nextSibling.classList.remove("hidden");
+      } else {
+        myInput.classList.remove("input-error");
+        myInput.nextSibling.classList.add("hidden");
+        myInput.classList.add("input-correct");
+      };
+    }
+  }
+
+  validateForm(input, message) {
+    console.log(input)
+    if (input.value !== '') {
+      input.classList.remove("input-error");
+      message.classList.add("hidden");
+      input.classList.add("input-correct");
+    } else {
+      input.classList.remove("input-correct");
+      input.classList.add("input-error");
+      message.classList.remove("hidden");
+    }
+  }
+
+  validateAll() {
+    this.validateEmail()
+    this.validateImage()
+    this.validateInputs()
+    console.log('validateInputs', this.validateInputs())
+    const { name, job, image, email, linkedin, github } = this.state.userInfo;
+    const errorMessage = this.errorMessage.current;
+    const createButton = errorMessage.nextSibling;
+    if (this.validateEmail() === true && this.validateImage() === true && name !== '' && job !== '' && linkedin !== '' && github !== '') {
+      errorMessage.classList.add('hidden')
+      createButton.classList.remove('create-card--button--active')
+      createButton.disabled = false
+    } else {
+      errorMessage.classList.remove('hidden')
+      createButton.classList.add('create-card--button--active')
+      createButton.disabled = true
+    }
+  }
+
+  sendData() {
+    const urlBase = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    fetch(urlBase, {
+      method: 'POST',
+      body: localStorage.getItem('data'),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => this.showURL(data))
+      .catch(function (error) { console.log(error) })
+  }
+
+  showURL(data) {
+    console.log(this.createdCard.current)
+    const cardContainer = this.cardContainer.current;
+    if (data.success) {
+      this.createdCard.current.innerHTML = `<a class="final__link" href=${data.cardURL} target="_blank">${data.cardURL}</a>`;
+      cardContainer.classList.add('created-card--container--visible')
+    } else {
+      this.createdCard.current.innerHTML = 'ERROR:' + data.error;
+    }
+  }
+
   render() {
     return (
       <div className="CardMaker">
@@ -119,10 +280,10 @@ class CardMaker extends React.Component {
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              paletteValue=""
-              palette={this.state.palette}
+              palette={this.state.userInfo.palette}
               avatar={this.state.profile.avatar}
               cardDetails={this.state.userInfo}
+              resetInfo={this.resetInfo}
             />
           </section>
           <CardForm
@@ -134,14 +295,23 @@ class CardMaker extends React.Component {
             userInfo={this.state.userInfo}
             updateUserInfo={this.updateUserInfo}
             updateUserInfoIcon={this.updateUserInfoIcon}
+            validateForm={this.validateForm}
             handleCollapse={this.handleCollapse}
             activePanel={this.state.activePanel}
             collapsearrow={this.state.collapsearrow}
+            validateAll={this.validateAll}
+            errorMessage={this.errorMessage}
+            cardContainer={this.cardContainer}
+            sendData={this.sendData}
+            createdCard={this.createdCard}
+            inputEmail={this.inputEmail}
+            inputThumbnail={this.inputThumbnail}
+            inputRef={this.inputRef}
           />
         </main>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
