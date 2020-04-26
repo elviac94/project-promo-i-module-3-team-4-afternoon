@@ -1,12 +1,7 @@
 import React from 'react';
 import LogoAdalab from '../images/logo-adalab.png';
 
-class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
+const Footer = () => {
     return (
     <div className="Footer">
       <footer className="wrapperFooter">
@@ -23,6 +18,5 @@ class Footer extends React.Component {
       </div>
     );
   }
-}
 
 export default Footer;
