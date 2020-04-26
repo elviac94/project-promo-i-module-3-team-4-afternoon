@@ -3,22 +3,14 @@ import Logo from '../images/logo_awesome.svg'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
-class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="Landing">
-        <main id="mainindex" className="wrapperMain">
-          <div className="mainindex__container">
-            <div className="mainindex__container--logo">
-              {/* <a className="mainindex__logo-container" href="#" title=""> */}
-                <img src={Logo} alt="Logo Awesome profile-cards"
-                    title="Awesome profile cards" />
-              {/* </a> */}
-            </div>
+const Landing = () => {
+  return (
+    <div className="Landing">
+      <main id="mainindex" className="wrapperMain">
+        <div className="mainindex__container">
+          <div className="mainindex__container--logo">
+            <img src={Logo} alt="Logo Awesome profile-cards" title="Awesome profile cards" />
+          </div>
           <div className="mainindex__container--text">
             <h1 className="mainindex__container--title">Crea tu tarjeta de visita</h1>
             <p className="mainindex__container--phrase">Crea mejores contactos profesionales de forma fácil y cómoda</p>
@@ -35,16 +27,14 @@ class Landing extends React.Component {
             <div className="image-share">
               <i className="fas fa-share-alt"></i>
               <h3 className="text-item">Comparte</h3>
-            </div>
           </div>
-          <Link className="mainindex__button" to="/CardMaker" title="Ir al creador de tarjetas">Comenzar</Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-      
-    );
-  }
+        </div>
+        <Link className="mainindex__button" to="/CardMaker" title="Ir al creador de tarjetas">Comenzar</Link>
+        </div>
+      </main>
+      <Footer />
+    </div> 
+  );
 }
 
 export default Landing;

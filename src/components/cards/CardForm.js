@@ -60,6 +60,7 @@ const CardForm = (props) => {
                   cardContainer={props.cardContainer}
                   sendData={props.sendData}
                   createdCard={props.createdCard}
+                  cardURL={props.cardURL}
                 />
               </CollapseItem>
             </div>

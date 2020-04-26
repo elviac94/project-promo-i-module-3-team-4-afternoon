@@ -46,10 +46,10 @@ const CardPreview = (props) => {
           </div>
           <div className="image--preview_picture js__profile-image" style={{ backgroundImage: `url(${props.avatar})` }} ></div>
           <div className={`image--preview_icons ${selectColorIcon()}`} id="image--preview_icons">
-            <a id="icon-phone" className="preview icon--1 hidden--fill" href={`tel:${cardDetails.phone}`} target="_blank" title="Teléfono"></a>
-            <a id="icon-email" className="preview icon--2 hidden--fill" href={`mailto:${cardDetails.email}`} target="_blank" title="Email"></a>
-            <a id="icon-linkedin" className="preview icon--3 hidden--fill" href={`https://www.linkedin.com/in/${cardDetails.linkedin}`} target="_blank" title="Linkedin"></a>
-            <a id="icon-github" className="preview icon--4 hidden--fill" href={`https://www.github.com/${cardDetails.github}`} target="_blank" title="Github"></a>
+            <a id="icon-phone" className="preview icon--1 hidden--fill" href={`tel:${cardDetails.phone}`} target="_blank" title="Teléfono" rel="noopener noreferrer"></a>
+            <a id="icon-email" className="preview icon--2 hidden--fill" href={`mailto:${cardDetails.email}`} target="_blank" title="Email" rel="noopener noreferrer"></a>
+            <a id="icon-linkedin" className="preview icon--3 hidden--fill" href={`https://www.linkedin.com/in/${cardDetails.linkedin}`} target="_blank" title="Linkedin" rel="noopener noreferrer"></a>
+            <a id="icon-github" className="preview icon--4 hidden--fill" href={`https://www.github.com/${cardDetails.github}`} target="_blank" title="Github" rel="noopener noreferrer"></a>
           </div>
         </div>
       </div>
