@@ -2,7 +2,7 @@ import React from 'react';
 import LogoAdalab from '../images/logo-adalab.png';
 
 const Footer = () => {
-    return (
+  return (
     <div className="Footer">
       <footer className="wrapperFooter">
         <div className="footer__container">
@@ -15,8 +15,8 @@ const Footer = () => {
       
         </div>
       </footer>
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default Footer;
