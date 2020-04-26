@@ -25,6 +25,7 @@ class CardMaker extends React.Component {
       isAvatarDefault: true,
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design',
+      cardURL: ''
     }
     this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
@@ -156,6 +157,7 @@ class CardMaker extends React.Component {
           avatar: data.photo
         },
         isAvatarDefault: data.photo !== defaultImage ? false : true,
+        cardURL: '',
       })
       if (data.email !== '') {
         this.updateIcon('email', true)
@@ -271,9 +273,9 @@ class CardMaker extends React.Component {
   }
 
   showURL(data) {
-    console.log(this.createdCard.current)
     const cardContainer = this.cardContainer.current;
     if (data.success) {
+      this.setState({ cardURL: data.cardURL })
       this.createdCard.current.innerHTML = `<a class="final__link" href=${data.cardURL} target="_blank">${data.cardURL}</a>`;
       cardContainer.classList.add('created-card--container--visible')
     } else {
@@ -315,6 +317,7 @@ class CardMaker extends React.Component {
             inputEmail={this.inputEmail}
             inputThumbnail={this.inputThumbnail}
             inputRef={this.inputRef}
+            cardURL={this.state.cardURL}
           />
         </main>
         <Footer />

@@ -13,6 +13,7 @@ const Share = (props) => {
                     <ShareBottomBtnTwitter 
                       cardContainer={props.cardContainer}
                       createdCard={props.createdCard}
+                      cardURL={props.cardURL}
                     />
                   </div>
                 </div>
