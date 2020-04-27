@@ -2,10 +2,11 @@ import React from 'react';
 import defaultImage from '../DefaultImage';
 
 const CardPreview = (props) => {
-  const cardDetails = props.cardDetails
+  const {cardDetails, palette, resetInfo, avatar} = props;
+  const {name, job, phone, email, linkedin, github } = cardDetails;
 
   const getDefaultName=()=>{
-    let nameDefault = cardDetails.name
+    let nameDefault = name
     if(nameDefault ===''){
       nameDefault='Nombre Apellido'
     }
@@ -13,14 +14,14 @@ const CardPreview = (props) => {
   }
 
   const getDefaultJob=()=>{
-    let jobDefault = cardDetails.job
+    let jobDefault = job
     if(jobDefault ===''){
       jobDefault='Front-end developer'
     }
     return jobDefault
   }
 
-  let paletteValue = props.palette
+  let paletteValue = palette
   const selectColor = () => {
     if (paletteValue === '1') {
       return ' color-palette1'
@@ -33,7 +34,7 @@ const CardPreview = (props) => {
     }
   }
 
-  let paletteIcon = props.palette
+  let paletteIcon = palette
   const selectColorIcon = () => {
     if (paletteIcon === '1') {
       return ' icon-palette1'
@@ -49,7 +50,7 @@ const CardPreview = (props) => {
   return (
     <div className="CardPreview">
       <div className="box--preview">
-        <button className="button--preview" onClick={props.resetInfo}>
+        <button className="button--preview" onClick={resetInfo}>
           <i className="far fa-trash-alt"></i> Reset
         </button>
         <div className="image--preview">
@@ -60,12 +61,12 @@ const CardPreview = (props) => {
               <p className="card--full_profession">{getDefaultJob()}</p>
             </div>
           </div>
-          <div className="image--preview_picture js__profile-image" style={{ backgroundImage: `url(${props.avatar})` }} ></div>
+          <div className="image--preview_picture js__profile-image" style={{ backgroundImage: `url(${avatar})` }} ></div>
           <div className={`image--preview_icons ${selectColorIcon()}`} id="image--preview_icons">
-            <a id="icon-phone" className="preview icon--1 hidden--fill" href={`tel:${cardDetails.phone}`} target="_blank" title="Teléfono" rel="noopener noreferrer"></a>
-            <a id="icon-email" className="preview icon--2 hidden--fill" href={`mailto:${cardDetails.email}`} target="_blank" title="Email" rel="noopener noreferrer"></a>
-            <a id="icon-linkedin" className="preview icon--3 hidden--fill" href={`https://www.linkedin.com/in/${cardDetails.linkedin}`} target="_blank" title="Linkedin" rel="noopener noreferrer"></a>
-            <a id="icon-github" className="preview icon--4 hidden--fill" href={`https://www.github.com/${cardDetails.github}`} target="_blank" title="Github" rel="noopener noreferrer"></a>
+            <a id="icon-phone" className="preview icon--1 hidden--fill" href={`tel:${phone}`} target="_blank" title="Teléfono" rel="noopener noreferrer"></a>
+            <a id="icon-email" className="preview icon--2 hidden--fill" href={`mailto:${email}`} target="_blank" title="Email" rel="noopener noreferrer"></a>
+            <a id="icon-linkedin" className="preview icon--3 hidden--fill" href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" title="Linkedin" rel="noopener noreferrer"></a>
+            <a id="icon-github" className="preview icon--4 hidden--fill" href={`https://www.github.com/${github}`} target="_blank" title="Github" rel="noopener noreferrer"></a>
           </div>
         </div>
       </div>
@@ -75,7 +76,7 @@ const CardPreview = (props) => {
 
 CardPreview.defaultProps = {
   avatar: defaultImage,
-  //paletteValue: '1',
+  //palette: '1',
   //paletteIcon: '1',
   userInfo: {
     name: 'Nombre Apellido',

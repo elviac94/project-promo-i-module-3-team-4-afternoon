@@ -5,62 +5,63 @@ import Share from './Share';
 import CollapseItem from './CollapseItem';
 
 const CardForm = (props) => {
+  const {ValidateAll, handleCollapse, activePanel, collapsearrow, handleChoice, userInfo, avatar, isAvatarDefault, updateAvatar, updateUserInfo, updateUserInfoIcon, validateForm, inputEmail, inputErrorEmail, inputThumbnail, inputRef, validateAll, errorMessage, cardContainer, sendData, createdCard, cardURL} = props;
   return (
     <div>
       <section className="card--form">
         <div className="wrapper-general">
-          <form className="complete--form" onChange={props.ValidateAll}>
+          <form className="complete--form" onChange={ValidateAll}>
             <div className="collapse-list">
               <CollapseItem collapseTitle='Diseña'
-                handleCollapse={props.handleCollapse}
-                activePanel={props.activePanel}
+                handleCollapse={handleCollapse}
+                activePanel={activePanel}
                 id='collapse-design'
                 icon='far fa-object-ungroup'
-                collapsearrow={props.collapsearrow}
+                collapsearrow={collapsearrow}
                 validateAll=''
               >
                 <Design
-                  handleChoice={props.handleChoice}
-                  userInfo={props.userInfo.palette} />
+                  handleChoice={handleChoice}
+                  userInfo={userInfo.palette} />
               </CollapseItem>
 
               <CollapseItem collapseTitle='Rellena'
-                handleCollapse={props.handleCollapse}
-                activePanel={props.activePanel}
+                handleCollapse={handleCollapse}
+                activePanel={activePanel}
                 id='collapse-fill'
                 icon='far fa-keyboard fa-lg'
-                collapsearrow={props.collapsearrow}
+                collapsearrow={collapsearrow}
                 validateAll=''
               >
                 <FormFill
-                  avatar={props.avatar}
-                  isAvatarDefault={props.isAvatarDefault}
-                  updateAvatar={props.updateAvatar}
-                  userInfo={props.userInfo}
-                  updateUserInfo={props.updateUserInfo}
-                  updateUserInfoIcon={props.updateUserInfoIcon}
-                  validateForm={props.validateForm}
-                  inputEmail={props.inputEmail}
-                  inputErrorEmail={props.inputErrorEmail}
-                  inputThumbnail={props.inputThumbnail}
-                  inputRef={props.inputRef}
+                  avatar={avatar}
+                  isAvatarDefault={isAvatarDefault}
+                  updateAvatar={updateAvatar}
+                  userInfo={userInfo}
+                  updateUserInfo={updateUserInfo}
+                  updateUserInfoIcon={updateUserInfoIcon}
+                  validateForm={validateForm}
+                  inputEmail={inputEmail}
+                  inputErrorEmail={inputErrorEmail}
+                  inputThumbnail={inputThumbnail}
+                  inputRef={inputRef}
                 />
               </CollapseItem>
 
               <CollapseItem collapseTitle='Comparte'
-                handleCollapse={props.handleCollapse}
-                activePanel={props.activePanel}
+                handleCollapse={handleCollapse}
+                activePanel={activePanel}
                 id='collapse-share'
                 icon='fas fa-share-alt'
-                collapsearrow={props.collapsearrow}
-                validateAll={props.validateAll}
+                collapsearrow={collapsearrow}
+                validateAll={validateAll}
               >
                 <Share
-                  errorMessage={props.errorMessage}
-                  cardContainer={props.cardContainer}
-                  sendData={props.sendData}
-                  createdCard={props.createdCard}
-                  cardURL={props.cardURL}
+                  errorMessage={errorMessage}
+                  cardContainer={cardContainer}
+                  sendData={sendData}
+                  createdCard={createdCard}
+                  cardURL={cardURL}
                 />
               </CollapseItem>
             </div>
