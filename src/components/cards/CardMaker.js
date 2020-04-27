@@ -25,7 +25,6 @@ class CardMaker extends React.Component {
       isAvatarDefault: true,
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design',
-      cardURL: ''
     }
     this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
@@ -78,7 +77,8 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            name: 'Nombre apellido'
+            // name: 'Nombre Apellido'
+            name: inputValue
           }
         }
       })
@@ -87,7 +87,8 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            job: 'Front-end developer'
+            // job: 'Front-end developer'
+            job: inputValue
           }
         }
       })
@@ -141,6 +142,7 @@ class CardMaker extends React.Component {
 
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('data'));
+    const {updateIcon} = this;
     if (data !== null) {
       this.setState({
         userInfo: {
@@ -157,56 +159,59 @@ class CardMaker extends React.Component {
           avatar: data.photo
         },
         isAvatarDefault: data.photo !== defaultImage ? false : true,
-        cardURL: '',
       })
       if (data.email !== '') {
-        this.updateIcon('email', true)
+        updateIcon('email', true)
       }
       if (data.phone !== '') {
-         this.updateIcon('phone', true)
+         updateIcon('phone', true)
       }
       if(data.linkedin !== '') {
-       this.updateIcon('linkedin', true)
+       updateIcon('linkedin', true)
       }
       if (data.github !== '') {
-         this.updateIcon('github', true)
+         updateIcon('github', true)
       }
     }
   }
 
   resetInfo() {
+    const {updateIcon} = this;
     this.setState(this.initialState);
-    this.updateIcon('email', false);
-    this.updateIcon('phone', false);
-    this.updateIcon('linkedin', false);
-    this.updateIcon('github', false);
+    updateIcon('email', false);
+    updateIcon('phone', false);
+    updateIcon('linkedin', false);
+    updateIcon('github', false);
   }
 
   validateEmail() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.userInfo.email) === true) {
-      this.inputEmail.current.classList.remove("input-error");
-      this.inputEmail.current.classList.add("input-correct");
-      this.inputEmail.current.nextSibling.classList.add("hidden")
+    const {inputEmail} = this;
+    const {userInfo} = this.state;
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userInfo.email) === true) {
+      inputEmail.current.classList.remove("input-error");
+      inputEmail.current.classList.add("input-correct");
+      inputEmail.current.nextSibling.classList.add("hidden")
       return true
     } else {
-      this.inputEmail.current.classList.remove("input-correct");
-      this.inputEmail.current.nextSibling.classList.remove("hidden")
-      this.inputEmail.current.classList.add("input-error");
+      inputEmail.current.classList.remove("input-correct");
+      inputEmail.current.nextSibling.classList.remove("hidden")
+      inputEmail.current.classList.add("input-error");
       return false
     }
   }
 
   validateImage() {
+    const {inputThumbnail} = this;
     if
       (this.state.userInfo.photo === defaultImage) {
-      this.inputThumbnail.current.classList.remove("input-correct")
-      this.inputThumbnail.current.previousSibling.previousSibling.classList.remove('hidden');
-      this.inputThumbnail.current.classList.add("input-error")
+      inputThumbnail.current.classList.remove("input-correct")
+      inputThumbnail.current.previousSibling.previousSibling.classList.remove('hidden');
+      inputThumbnail.current.classList.add("input-error")
       return false
     } else {
-      this.inputThumbnail.current.classList.remove("input-error")
-      this.inputThumbnail.current.classList.add("input-correct")
-      this.inputThumbnail.current.previousSibling.previousSibling.classList.add('hidden');
+      inputThumbnail.current.classList.remove("input-error")
+      inputThumbnail.current.classList.add("input-correct")
+      inputThumbnail.current.previousSibling.previousSibling.classList.add('hidden');
       return true
     }
   }
@@ -228,7 +233,7 @@ class CardMaker extends React.Component {
 
   validateForm(input, message) {
     console.log(input)
-    if (input.value !== '') {
+    if (input.name !== 'email' && input.value !== '') {
       input.classList.remove("input-error");
       message.classList.add("hidden");
       input.classList.add("input-correct");
@@ -275,7 +280,6 @@ class CardMaker extends React.Component {
   showURL(data) {
     const cardContainer = this.cardContainer.current;
     if (data.success) {
-      this.setState({ cardURL: data.cardURL })
       this.createdCard.current.innerHTML = `<a class="final__link" href=${data.cardURL} target="_blank">${data.cardURL}</a>`;
       cardContainer.classList.add('created-card--container--visible')
     } else {
@@ -284,40 +288,41 @@ class CardMaker extends React.Component {
   }
 
   render() {
+    const {userInfo, profile, palette, isAvatarDefault, activePanel, collapsearrow} = this.state;
+    const {resetInfo, handleChoice, updateAvatar, updateUserInfo, updateUserInfoIcon, validateForm, handleCollapse, validateAll, errorMessage, cardContainer, sendData, createdCard, inputEmail, inputThumbnail, inputRef} = this;
     return (
       <div className="CardMaker">
         <Header />
         <main className="main-form">
           <section className="card--preview">
             <CardPreview
-              palette={this.state.userInfo.palette}
-              avatar={this.state.profile.avatar}
-              cardDetails={this.state.userInfo}
-              resetInfo={this.resetInfo}
+              palette={userInfo.palette}
+              avatar={profile.avatar}
+              cardDetails={userInfo}
+              resetInfo={resetInfo}
             />
           </section>
           <CardForm
-            handleChoice={this.handleChoice}
-            palette={this.state.palette}
-            avatar={this.state.profile.avatar}
-            isAvatarDefault={this.state.isAvatarDefault}
-            updateAvatar={this.updateAvatar}
-            userInfo={this.state.userInfo}
-            updateUserInfo={this.updateUserInfo}
-            updateUserInfoIcon={this.updateUserInfoIcon}
-            validateForm={this.validateForm}
-            handleCollapse={this.handleCollapse}
-            activePanel={this.state.activePanel}
-            collapsearrow={this.state.collapsearrow}
-            validateAll={this.validateAll}
-            errorMessage={this.errorMessage}
-            cardContainer={this.cardContainer}
-            sendData={this.sendData}
-            createdCard={this.createdCard}
-            inputEmail={this.inputEmail}
-            inputThumbnail={this.inputThumbnail}
-            inputRef={this.inputRef}
-            cardURL={this.state.cardURL}
+            handleChoice={handleChoice}
+            palette={palette}
+            avatar={profile.avatar}
+            isAvatarDefault={isAvatarDefault}
+            updateAvatar={updateAvatar}
+            userInfo={userInfo}
+            updateUserInfo={updateUserInfo}
+            updateUserInfoIcon={updateUserInfoIcon}
+            validateForm={validateForm}
+            handleCollapse={handleCollapse}
+            activePanel={activePanel}
+            collapsearrow={collapsearrow}
+            validateAll={validateAll}
+            errorMessage={errorMessage}
+            cardContainer={cardContainer}
+            sendData={sendData}
+            createdCard={createdCard}
+            inputEmail={inputEmail}
+            inputThumbnail={inputThumbnail}
+            inputRef={inputRef}
           />
         </main>
         <Footer />

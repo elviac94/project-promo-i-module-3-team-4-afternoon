@@ -7,24 +7,27 @@ class CollapseItem extends React.Component {
   }
 
   displayPanel(evt) {
-    this.props.handleCollapse(evt.currentTarget.id)
+    const {handleCollapse, validateAll} = this.props;
+    handleCollapse(evt.currentTarget.id)
     if(evt.currentTarget.id === 'collapse-share') {
-      this.props.validateAll(evt)
+      validateAll(evt)
     } 
   }
 
   render() {
+    const {id, activePanel, icon, collapseTitle, collapsearrow, children} = this.props;
+    const {displayPanel} = this;
     return (
       <div className="collapse-section">
-        <div id={this.props.id} onClick={this.displayPanel} className={`section-top ${this.props.activePanel === this.props.id ? "section-top__noborder" : "section-top__border"}`}>
+        <div id={id} onClick={displayPanel} className={`section-top ${activePanel === id ? "section-top__noborder" : "section-top__border"}`}>
             <div className="title-icon">
-              <i className={this.props.icon}></i>
-              <h3 className="section-title">{this.props.collapseTitle}</h3>
+              <i className={icon}></i>
+              <h3 className="section-title">{collapseTitle}</h3>
             </div>
-            <div className={`arrow ${this.props.collapsearrow === this.props.id ? "arrow-active" : ""}`}></div>
+            <div className={`arrow ${collapsearrow === id ? "arrow-active" : ""}`}></div>
           </div>
-          <div className={`collapse-item ${this.props.activePanel === this.props.id ? "visible" : ""}`}>
-            {this.props.children}
+          <div className={`collapse-item ${activePanel === id ? "visible" : ""}`}>
+            {children}
           </div>
       </div>
     );

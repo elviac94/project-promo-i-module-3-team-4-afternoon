@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class GetAvatar extends Component {
     constructor(props) {
       super(props);
-  
+
       this.fr = new FileReader();
       this.myFileField = React.createRef();
       
@@ -38,17 +38,18 @@ class GetAvatar extends Component {
     }
   
     render() {
-      const {isAvatarDefault, avatar} = this.props;
+      const {isAvatarDefault, avatar, inputRef} = this.props;
+      const {handleFilePicker, myFileField, uploadImage, getPreview} = this;
       return (
         <div className="get-avatar">
-          <button className="buttonform--image js__profile-trigger" type="button" onClick={this.handleFilePicker}>Añadir imagen</button>
+          <button className="buttonform--image js__profile-trigger" type="button" onClick={handleFilePicker}>Añadir imagen</button>
           
-          <input id="image-input"  name="image" type="file" ref={this.myFileField} className="action__hiddenField js__profile-upload-btn" onChange={this.uploadImage} required />
+          <input id="image-input"  name="image" type="file" ref={myFileField} className="action__hiddenField js__profile-upload-btn" onChange={uploadImage} required />
 
           <p className="text-error hidden" id="text-error_image">*Sube una imagen.</p>
           <label className="label-fill" htmlFor="addimage"></label>
           
-          <div className="thumbnail input-correct js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)} ref={this.props.inputRef} ></div>
+          <div className="thumbnail input-correct js__profile-preview" style={getPreview(isAvatarDefault, avatar)} ref={inputRef} ></div>
         </div>
       );
     }

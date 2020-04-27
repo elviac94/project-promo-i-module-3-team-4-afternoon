@@ -3,17 +3,18 @@ import ShareBottomBtnCard from './ShareBottomBtnCard';
 import ShareBottomBtnTwitter from './ShareBottomBtnTwitter';
 
 const Share = (props) => {
+  const {errorMessage, sendData, cardContainer, createdCard, cardURL} = props;
         return (
             <div className="form__share">
                   <div className="share--bottom share--bottom--visible">
                     <ShareBottomBtnCard
-                      errorMessage={props.errorMessage}
-                      sendData={props.sendData}
+                      errorMessage={errorMessage}
+                      sendData={sendData}
                     />
                     <ShareBottomBtnTwitter 
-                      cardContainer={props.cardContainer}
-                      createdCard={props.createdCard}
-                      cardURL={props.cardURL}
+                      cardContainer={cardContainer}
+                      createdCard={createdCard}
+                      cardURL={cardURL}
                     />
                   </div>
                 </div>

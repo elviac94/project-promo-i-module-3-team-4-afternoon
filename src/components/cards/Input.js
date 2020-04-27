@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Input = (props) => {
-    
+    const {id, input, required, requiredIcon, placeholder, type, value, inputRef, textError, errorMessage} = props;
+
     function getData(evt) {
         const id = evt.currentTarget.id;
         const value = evt.currentTarget.value;
@@ -13,11 +14,11 @@ const Input = (props) => {
 
     return (
         <div>
-            <label className="label-fill" htmlFor={props.id}>{props.input}
-                <span className={props.required}>{props.requiredIcon}</span>
+            <label className="label-fill" htmlFor={id}>{input}
+                <span className={required}>{requiredIcon}</span>
             </label>
-            <input placeholder={props.placeholder} id={props.id} type={props.type} name={props.id} className="input-fill input-validation" required={props.required} onChange={getData} value={props.value} ref={props.inputRef} />
-            <p className={`hidden ${props.textError}`} id={`text-error_${props.id}`}>{props.errorMessage}</p>
+            <input placeholder={placeholder} id={id} type={type} name={id} className="input-fill input-validation" required={required} onChange={getData} value={value} ref={inputRef} />
+            <p className={`hidden ${textError}`} id={`text-error_${id}`}>{errorMessage}</p>
         </div>
     )
 }
