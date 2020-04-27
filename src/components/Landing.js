@@ -32,7 +32,9 @@ const Landing = () => {
         <Link className="mainindex__button" to="/CardMaker" title="Ir al creador de tarjetas">Comenzar</Link>
         </div>
       </main>
+      <Link to="/reactivePalettes" title="Saber más del proyecto">
       <Footer />
+      </Link>
     </div> 
   );
 }

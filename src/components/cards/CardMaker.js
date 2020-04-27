@@ -4,6 +4,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import CardPreview from './CardPreview'
 import defaultImage from '../DefaultImage';
+import { Link } from 'react-router-dom';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -143,7 +144,7 @@ class CardMaker extends React.Component {
 
   componentDidMount() {
     const data = JSON.parse(localStorage.getItem('data'));
-    const {updateIcon} = this;
+    const { updateIcon } = this;
     if (data !== null) {
       this.setState({
         userInfo: {
@@ -165,19 +166,19 @@ class CardMaker extends React.Component {
         updateIcon('email', true)
       }
       if (data.phone !== '') {
-         updateIcon('phone', true)
+        updateIcon('phone', true)
       }
-      if(data.linkedin !== '') {
-       updateIcon('linkedin', true)
+      if (data.linkedin !== '') {
+        updateIcon('linkedin', true)
       }
       if (data.github !== '') {
-         updateIcon('github', true)
+        updateIcon('github', true)
       }
     }
   }
 
   resetInfo() {
-    const {updateIcon} = this;
+    const { updateIcon } = this;
     this.setState(this.initialState);
     updateIcon('email', false);
     updateIcon('phone', false);
@@ -186,8 +187,8 @@ class CardMaker extends React.Component {
   }
 
   validateEmail() {
-    const {inputEmail} = this;
-    const {userInfo} = this.state;
+    const { inputEmail } = this;
+    const { userInfo } = this.state;
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userInfo.email) === true) {
       inputEmail.current.classList.remove("input-error");
       inputEmail.current.classList.add("input-correct");
@@ -202,7 +203,7 @@ class CardMaker extends React.Component {
   }
 
   validateImage() {
-    const {inputThumbnail} = this;
+    const { inputThumbnail } = this;
     if
       (this.state.userInfo.photo === defaultImage) {
       inputThumbnail.current.classList.remove("input-correct")
@@ -290,8 +291,8 @@ class CardMaker extends React.Component {
   }
 
   render() {
-    const {userInfo, profile, palette, isAvatarDefault, activePanel, collapsearrow, cardURL} = this.state;
-    const {resetInfo, handleChoice, updateAvatar, updateUserInfo, updateUserInfoIcon, validateForm, handleCollapse, validateAll, errorMessage, cardContainer, sendData, createdCard, inputEmail, inputThumbnail, inputRef} = this;
+    const { userInfo, profile, palette, isAvatarDefault, activePanel, collapsearrow, cardURL } = this.state;
+    const { resetInfo, handleChoice, updateAvatar, updateUserInfo, updateUserInfoIcon, validateForm, handleCollapse, validateAll, errorMessage, cardContainer, sendData, createdCard, inputEmail, inputThumbnail, inputRef } = this;
     return (
       <div className="CardMaker">
         <Header />
@@ -328,7 +329,9 @@ class CardMaker extends React.Component {
             cardURL={cardURL}
           />
         </main>
-        <Footer />
+        <Link to="/reactivePalettes" title="Saber más del proyecto">
+          <Footer />
+        </Link>
       </div>
     )
   }

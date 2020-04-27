@@ -3,6 +3,7 @@ import '../stylesheets/main.scss';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
 import CardMaker from './cards/CardMaker';
+import ReactivePalettes from './demo/ReactivePalettes';
 
 class App extends React.Component {
 
@@ -15,6 +16,9 @@ class App extends React.Component {
           </Route>
           <Route exact path="/CardMaker">
             <CardMaker />
+          </Route>
+          <Route exact path="/reactivePalettes">
+            <ReactivePalettes />
           </Route>
         </Switch>
       </div>
