@@ -78,7 +78,7 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            name: ''
+            name: 'Nombre apellido'
           }
         }
       })
@@ -87,7 +87,7 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            job: ''
+            job: 'Front-end developer'
           }
         }
       })
