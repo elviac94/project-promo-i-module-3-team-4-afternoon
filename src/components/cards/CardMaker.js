@@ -25,6 +25,7 @@ class CardMaker extends React.Component {
       isAvatarDefault: true,
       activePanel: 'collapse-design',
       collapsearrow: 'collapse-design',
+      cardURL: '',
     }
     this.initialState = this.state;
     this.handleChoice = this.handleChoice.bind(this);
@@ -280,6 +281,7 @@ class CardMaker extends React.Component {
   showURL(data) {
     const cardContainer = this.cardContainer.current;
     if (data.success) {
+      this.setState({ cardURL: data.cardURL })
       this.createdCard.current.innerHTML = `<a class="final__link" href=${data.cardURL} target="_blank">${data.cardURL}</a>`;
       cardContainer.classList.add('created-card--container--visible')
     } else {
@@ -288,7 +290,7 @@ class CardMaker extends React.Component {
   }
 
   render() {
-    const {userInfo, profile, palette, isAvatarDefault, activePanel, collapsearrow} = this.state;
+    const {userInfo, profile, palette, isAvatarDefault, activePanel, collapsearrow, cardURL} = this.state;
     const {resetInfo, handleChoice, updateAvatar, updateUserInfo, updateUserInfoIcon, validateForm, handleCollapse, validateAll, errorMessage, cardContainer, sendData, createdCard, inputEmail, inputThumbnail, inputRef} = this;
     return (
       <div className="CardMaker">
@@ -323,6 +325,7 @@ class CardMaker extends React.Component {
             inputEmail={inputEmail}
             inputThumbnail={inputThumbnail}
             inputRef={inputRef}
+            cardURL={cardURL}
           />
         </main>
         <Footer />
