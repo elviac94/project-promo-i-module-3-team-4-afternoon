@@ -24,9 +24,16 @@
     }
 
     }
+
+    &--logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      }
    
       & .logo-container img{
-          width: 103px;
+          width: 105px;
           height: 40px;
 
           @include forTablet{
