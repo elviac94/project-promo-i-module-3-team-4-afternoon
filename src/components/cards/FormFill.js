@@ -4,21 +4,6 @@ import GetAvatar from '../GetAvatar';
 
 const FormFill = (props) => {
 
-  const getUserInfoName = () => {
-    let name = props.userInfo.name;
-    if (name === 'Nombre Apellido') {
-      name = '';
-    }
-    return name;
-  };
-
-  const getUserInfoJob = () => {
-    let job = props.userInfo.job;
-    if (job === 'Front-end developer') {
-      job = '';
-    }
-    return job;
-  };
 
   return (
     <div className="form__fill">
@@ -31,7 +16,7 @@ const FormFill = (props) => {
             required='required'
             requiredIcon='*'
             placeholder='Sally Jill'
-            value={getUserInfoName()}
+            value={props.userInfo.name}
             type='text'
             textError='text-error'
             errorMessage='*Dinos tu nombre por favor.'
@@ -44,7 +29,7 @@ const FormFill = (props) => {
             required='required'
             requiredIcon='*'
             placeholder='Front-end unicorn'
-            value={getUserInfoJob()}
+            value={props.userInfo.job}
             type='text'
             textError='text-error'
             errorMessage='*Tu trabajo también, gracias.'

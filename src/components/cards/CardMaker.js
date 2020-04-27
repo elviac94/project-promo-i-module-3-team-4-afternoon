@@ -11,8 +11,8 @@ class CardMaker extends React.Component {
     this.state = {
       userInfo: {
         palette: '1',
-        name: 'Nombre Apellido',
-        job: 'Front-end developer',
+        name: '',
+        job: '',
         email: '',
         phone: '',
         linkedin: '',
@@ -78,7 +78,7 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            name: 'Nombre Apellido'
+            name: ''
           }
         }
       })
@@ -87,7 +87,7 @@ class CardMaker extends React.Component {
         return {
           userInfo: {
             ...prevState.userInfo,
-            job: 'Front-end developer'
+            job: ''
           }
         }
       })

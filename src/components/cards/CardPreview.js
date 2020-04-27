@@ -4,6 +4,22 @@ import defaultImage from '../DefaultImage';
 const CardPreview = (props) => {
   const cardDetails = props.cardDetails
 
+  const getDefaultName=()=>{
+    let nameDefault = cardDetails.name
+    if(nameDefault ===''){
+      nameDefault='Nombre Apellido'
+    }
+    return nameDefault
+  }
+
+  const getDefaultJob=()=>{
+    let jobDefault = cardDetails.job
+    if(jobDefault ===''){
+      jobDefault='Front-end developer'
+    }
+    return jobDefault
+  }
+
   let paletteValue = props.palette
   const selectColor = () => {
     if (paletteValue === '1') {
@@ -40,8 +56,8 @@ const CardPreview = (props) => {
           <div className={`image--preview_text ${selectColor()}`} id="image--preview_text">
             <div className={`preview--square ${selectColor()}`}></div>
             <div className="card--full">
-              <h3 className="card--full_name">{cardDetails.name}</h3>
-              <p className="card--full_profession">{cardDetails.job}</p>
+              <h3 className="card--full_name">{getDefaultName()}</h3>
+              <p className="card--full_profession">{getDefaultJob()}</p>
             </div>
           </div>
           <div className="image--preview_picture js__profile-image" style={{ backgroundImage: `url(${props.avatar})` }} ></div>
