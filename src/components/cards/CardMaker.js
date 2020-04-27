@@ -329,9 +329,7 @@ class CardMaker extends React.Component {
             cardURL={cardURL}
           />
         </main>
-        <Link to="/reactivePalettes" title="Saber más del proyecto">
           <Footer />
-        </Link>
       </div>
     )
   }
