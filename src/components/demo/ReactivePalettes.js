@@ -12,22 +12,22 @@ const ReactivePalettes = () => {
     <div className="ReactivePalettes">
       <div className="logo">
         <div className="logo__shapes">
-          <Link to="/reactivePalettes/Scheme">
+          <Link to="/reactivePalettes/Scheme" title="Estructura">
             <div className="shape triangle">
               <img src={triangle} alt="triángulo logo" />
             </div>
           </Link>
-          <Link to="/reactivePalettes/Thecnology">
+          <Link to="/reactivePalettes/Thecnology" title="Tecnología">
             <div className="square">
               <img src={square} alt="cuadrado logo" />
             </div>
           </Link>
-          <Link to="/reactivePalettes/Team">
+          <Link to="/reactivePalettes/Team" title="Equipo">
             <div className="shape circle">
               <img src={circle} alt="círculo logo" />
             </div>
           </Link>
-          <Link to="/CardMaker">
+          <Link to="/" title="Web">
             <div className="shape slash">
               <img src={slash} alt="barra logo" />
             </div>
