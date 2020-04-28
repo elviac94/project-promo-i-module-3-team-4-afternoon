@@ -3,6 +3,7 @@ import '../../stylesheets/ReactivePalettes.scss';
 import ourstructure from '../../images/ourstructure.png';
 import gif from '../../images/gif_code.gif';
 import scheme from '../../images/esquema.png';
+import { Link } from 'react-router-dom';
 
 const Triangle = () => {
 
@@ -18,21 +19,26 @@ const Triangle = () => {
 
   return (
     <section className="demo__pages triangle">
-      <h2 className="demo__pages--title"><img src={ourstructure} alt="Out structure" /></h2>
+
+      <h2 className="demo__pages--title">
+        <Link to="/reactivePalettes/Thecnology" title="Tecnología">
+          <img className="logoPalettes" src={ourstructure} alt="Out structure" />
+        </Link>
+      </h2>
 
       <div className="demo__pages--content">
         <div className="scheme">
           <img className="scheme-img" src={scheme} alt="Esquema de componentes" onClick={zoomInScheme} />
           <details className="scheme__info"><summary>Esquema</summary>
-          <p>Este fue el esquema definitivo a la hora de montar nuestros componentes.</p>
-          <p>Se modificó de acuerdo a las necesidades durante cada una de las fases.</p></details>
+            <p>Este fue el esquema definitivo a la hora de montar nuestros componentes.</p>
+            <p>Se modificó de acuerdo a las necesidades durante cada una de las fases.</p></details>
         </div>
 
         <div className="code">
           <img className="code-img" src={gif} alt="Gif code" onClick={zoomInGif} />
           <details className="code__info"><summary>Código</summary>
-          <p>Un rápido vistazo a cómo fuimos creando y encajando los componentes.</p>
-          <p>Como el esquema, fue sufriendo modificaciones (¡muchas!) a lo largo de todo el proyecto según fuimos añadiendo funcionalidades.</p></details>
+            <p>Un rápido vistazo a cómo fuimos creando y encajando los componentes.</p>
+            <p>Como el esquema, fue sufriendo modificaciones (¡muchas!) a lo largo de todo el proyecto según fuimos añadiendo funcionalidades.</p></details>
         </div>
       </div>
     </section>

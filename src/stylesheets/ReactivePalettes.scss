@@ -1,4 +1,6 @@
 @import "./layouts/square";
+@import "utils/variables";
+@import "utils/mixins";
 
 .ReactivePalettes {
   .logo {
@@ -39,7 +41,7 @@
           transform-origin: center bottom;
         }
       }
-      .slash {
+      .bar {
         position: relative;
         left: -40px;
         &:hover {
@@ -59,6 +61,12 @@
         width: 100%;
       }
     }
+  }
+}
+.logoPalettes {
+  height: 60px;
+  @include forTablet {
+    height: 130px;
   }
 }
 

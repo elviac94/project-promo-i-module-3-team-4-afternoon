@@ -1,17 +1,11 @@
 @import "utils/variables";
 @import "utils/mixins";
 
-.Slash {
+.slash {
   height: 100vh;
   &__header {
     text-align: center;
     padding: 15px;
-    img {
-      height: 60px;
-      @include forTablet {
-        height: 70px;
-      }
-    }
   }
   &__landing {
     transform: scale(0.7);

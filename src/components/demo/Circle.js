@@ -6,11 +6,14 @@ import elvira from '../../images/elvira.png';
 import romi from '../../images/romi.png';
 import ourteam from '../../images/ourteam.png';
 import teamwork from '../../images/teamwork.png';
+import { Link } from 'react-router-dom';
 
 const Circle = () => {
   return (
     <div className="circle__container">
-      <img src={ourteam}></img>
+      <Link to="/reactivePalettes/Code" title="Web">
+        <img className="logoPalettes" src={ourteam} />
+      </Link>
       <h1>About us</h1>
       <div className="circle__team">
         <div className="circle__team--card">

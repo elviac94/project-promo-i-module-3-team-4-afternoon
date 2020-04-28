@@ -11,9 +11,11 @@ const Slash = () => {
     <div>
       <Switch>
         <Route exact path="/reactivePalettes/Code">
-          <div className="Slash">
+          <div className="slash">
             <div className="slash__header">
-              <img src={ourCode} alt="our code" />
+              <Link to="/reactivePalettes" title="Proyecto">
+                <img className="logoPalettes" src={ourCode} alt="our code" />
+              </Link>
             </div>
             <div className="slash__landing">
               <Landing />
@@ -28,9 +30,9 @@ const Slash = () => {
               <img src={ourCode} alt="our code" />
             </div>
             <div class="slash__cards">
-                <Link className="slash__cards--image image" to='/reactivePalettes/Code' title="Ir al inicio">
-                  <img src={logo} alt="logo" />
-                </Link>
+              <Link className="slash__cards--image image" to='/reactivePalettes/Code' title="Ir al inicio">
+                <img src={logo} alt="logo" />
+              </Link>
               <CardMaker />
             </div>
             <div className="slash__footer"></div>
