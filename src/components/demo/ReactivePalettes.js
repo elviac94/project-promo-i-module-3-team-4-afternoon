@@ -18,7 +18,7 @@ const ReactivePalettes = () => {
             </div>
           </Link>
           <Link to="/reactivePalettes/Thecnology" title="Tecnología">
-            <div className="square">
+            <div className="shape square">
               <img src={square} alt="cuadrado logo" />
             </div>
           </Link>
