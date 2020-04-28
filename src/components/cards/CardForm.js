@@ -10,7 +10,7 @@ const CardForm = (props) => {
     <div>
       <section className="card--form">
         <div className="wrapper-general">
-          <form className="complete--form" onChange={ValidateAll}>
+          <form className="complete--form" onKeyUp={ValidateAll}>
             <div className="collapse-list">
               <CollapseItem collapseTitle='Diseña'
                 handleCollapse={handleCollapse}

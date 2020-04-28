@@ -5,12 +5,15 @@ import react1 from '../../images/react1.png';
 import sass from '../../images/sass.png';
 import markdown from '../../images/markdown.png';
 import gityvs from '../../images/gityvs.png';
+import {Link} from 'react-router-dom';
 
 const Square = () => {
   return (
     <div className="demo__pages--square">
       <div className="square__logo--container">
-        <img src={ourtools} alt="square-logo"/>
+        <Link to="/reactivePalettes/Team" title="Equipo">
+          <img className="logoPalettes" src={ourtools} alt="square-logo" />
+        </Link>
       </div>
       <h3 className="scrum__subtitle--one">Metodología: filosofía Agile y marco de trabajo Scrum</h3>
       <div className="scrum__container">
@@ -26,10 +29,10 @@ const Square = () => {
       </div>
       <div className="tecnologies__container">
         <div className="react__image--container">
-          <img src={react1}/>
+          <img src={react1} />
         </div>
         <div className="sass__image--container">
-          <img src={sass}/>
+          <img src={sass} />
         </div>
         <div className="tecnologies__container--info">
           <h3 className="scrum__subtitle--two" >Tecnologías y herramientas empleadas:</h3>
@@ -37,10 +40,10 @@ const Square = () => {
           <p>Trello, Slack, Zoom </p>
         </div>
         <div className="markdown__image--container">
-          <img src={markdown}/>
+          <img src={markdown} />
         </div>
         <div className="gityvs__image--container">
-          <img src={gityvs}/>
+          <img src={gityvs} />
         </div>
       </div>
 

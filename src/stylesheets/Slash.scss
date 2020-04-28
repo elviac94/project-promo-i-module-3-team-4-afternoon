@@ -1,0 +1,51 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+.slash {
+  height: 100vh;
+  &__header {
+    text-align: center;
+    padding: 15px;
+  }
+  &__landing {
+    transform: scale(0.7);
+    position: relative;
+    top: -10%;
+    @include forTablet {
+      top: -12%;
+    }
+    &--btn {
+      position: relative;
+      left: 50%;
+      transform: translateX(-64.5px);
+      bottom: 186px;
+      @include forTablet {
+        bottom: 176px;
+      }
+      @include forPc {
+        bottom: 216px;
+      }
+    }
+  }
+  &__cards {
+    transform: scale(0.7);
+    position: relative;
+    top: -9.2%;
+    @include forTablet {
+      top: -16%;
+    }
+    @include forPc {
+      top: -13%;
+    }
+    &--image {
+      img {
+        position: absolute;
+        top: 31px;
+        left: 37px;
+        background: white;
+        height: 50px;
+        width: 201px;
+      }
+    }
+  }
+}

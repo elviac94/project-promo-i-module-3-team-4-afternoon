@@ -221,7 +221,7 @@ class CardMaker extends React.Component {
   validateInputs() {
     const inputFill = document.querySelectorAll('.input-fill');
     for (let myInput of inputFill) {
-      if (myInput.value === "" && myInput.required !== false) {
+      if (myInput.name !== 'email' && myInput.value === "" && myInput.required !== false) {
         myInput.classList.remove("input-correct");
         myInput.classList.add("input-error");
         myInput.nextSibling.classList.remove("hidden");
@@ -234,8 +234,7 @@ class CardMaker extends React.Component {
   }
 
   validateForm(input, message) {
-    console.log(input)
-    if (input.name !== 'email' && input.value !== '') {
+    if (input.value !== '') {
       input.classList.remove("input-error");
       message.classList.add("hidden");
       input.classList.add("input-correct");
@@ -250,7 +249,6 @@ class CardMaker extends React.Component {
     this.validateEmail()
     this.validateImage()
     this.validateInputs()
-    console.log('validateInputs', this.validateInputs())
     const { name, job, image, email, linkedin, github } = this.state.userInfo;
     const errorMessage = this.errorMessage.current;
     const createButton = errorMessage.nextSibling;
