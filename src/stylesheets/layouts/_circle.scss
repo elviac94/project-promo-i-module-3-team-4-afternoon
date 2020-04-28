@@ -30,7 +30,7 @@
     &--card {
       display: flex;
       flex-direction: row;
-      background-image: linear-gradient(
+      background-image:  -webkit-linear-gradient(
         -225deg,
         #dfffcd 0%,
         #90f9c4 58%,
@@ -43,15 +43,15 @@
       text-align: center;
       margin: 30px;
       width: 450px;
-      height: 250px;
+      height: 280px;
 
       &:hover {
           transform: scale(110%);
       }
 
-/*       img {
-        width: 200px;
-      } */
+      img {
+        width: 180px;
+      }
     }
 
     &--description {
