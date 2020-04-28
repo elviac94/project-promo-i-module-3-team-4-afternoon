@@ -9,7 +9,8 @@
       display: flex;
       justify-content: center;
       align-items: baseline;
-      width: 100vw;
+      // width: 100vw;
+      margin-left: 34px;
       .shape {
         display: inline-block;
         img {
@@ -47,7 +48,12 @@
       }
     }
     &__name {
-      width: 520px;
+      width: 300px;
+
+      @media all and (min-width: 700px) {
+        width: 520px;
+      }
+      
       img {
         width: 100%;
       }
