@@ -27,7 +27,7 @@ const ReactivePalettes = () => {
               <img src={circle} alt="círculo logo" />
             </div>
           </Link>
-          <Link to="/" title="Web">
+          <Link to="/reactivePalettes/Code" title="Web">
             <div className="shape slash">
               <img src={slash} alt="barra logo" />
             </div>

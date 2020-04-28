@@ -7,6 +7,7 @@ import ReactivePalettes from './demo/ReactivePalettes';
 import Triangle from './demo/Triangle';
 import Square from './demo/Square';
 import Circle from './demo/Circle';
+import Slash from './demo/Slash';
 
 class App extends React.Component {
 
@@ -31,6 +32,12 @@ class App extends React.Component {
           </Route>
           <Route exact path="/reactivePalettes/Team">
             <Circle />
+          </Route>
+          <Route exact path="/reactivePalettes/Code">
+            <Slash />
+          </Route>
+          <Route exact path="/reactivePalettes/Code/CardMaker">
+            <Slash />
           </Route>
         </Switch>
       </div>

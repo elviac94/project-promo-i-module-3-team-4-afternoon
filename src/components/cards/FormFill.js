@@ -8,7 +8,6 @@ const FormFill = (props) => {
 
   return (
     <div className="form__fill">
-
       <div className="fill--bottom fill--bottom--visible">
         <div className="fillform bottom-1">
           <Input
