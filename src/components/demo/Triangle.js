@@ -25,7 +25,7 @@ const Triangle = () => {
           <img className="scheme-img" src={scheme} alt="Esquema de componentes" onClick={zoomInScheme} />
           <details className="scheme__info"><summary>Esquema</summary>
           <p>Este fue el esquema definitivo a la hora de montar nuestros componentes.</p>
-          <p>Se modificó en base a las necesidades durante cada una de las fases.</p></details>
+          <p>Se modificó de acuerdo a las necesidades durante cada una de las fases.</p></details>
         </div>
 
         <div className="code">

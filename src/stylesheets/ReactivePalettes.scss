@@ -112,7 +112,7 @@
   88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
 }
 
-
+// Start of section triangle
 .triangle {
   margin: auto;
   font-family: "Montserrat";
@@ -134,16 +134,17 @@
     }
 
     .img-large {
-      // width:700px;
       box-shadow: 1px 1px 5px 1px rgb(90,240,174);
       transform: scale(1.5);
       transition: all 0.5s ease-in-out;
+      border-radius: 20px;
     }
 
     .img-large-gif {
       box-shadow: 1px 1px 5px 1px rgb(90,240,174);
       transform: scale(1.2);
-      transition: all 0.5s linear;
+      transition: all 0.3s linear;
+      border-radius: 20px;
     }
 
     .scheme, .code {
@@ -156,7 +157,37 @@
       justify-content: space-between;
       align-items: center;
       padding: 5px;
+      border-radius: 20px;
+      color: #54585a;
+
+      summary {
+        color: rgb(92,57,166);
+        outline:0;
+        font-size: 25px;
+      }
+      summary::-webkit-details-marker {
+        color: rgb(90,240,174);
+      }
+
+      details {
+        padding: 10px;
+      }
+      details[open] {
+        animation-name: growAndFade;
+        animation-duration: 0.5s;
+      }
     }
   }
-  
 }
+
+@keyframes growAndFade {
+	0% {
+    font-size: 0;
+    opacity: 0;
+	}
+	100% {
+    font-size: 1em;
+    opacity: 1;
+	}
+}
+// End of section triangle
