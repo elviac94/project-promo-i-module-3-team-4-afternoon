@@ -12,15 +12,15 @@ const Square = () => {
       <div className="square__logo--container">
         <img src={ourtools} alt="square-logo"/>
       </div>
-      <h3 className="scrum__subtitle--one">Marco de trabajo: metodología Agile y Scrum</h3>
+      <h3 className="scrum__subtitle--one">Metodología: filosofía Agile y marco de trabajo Scrum</h3>
       <div className="scrum__container">
         <div className="scrum__image--container">
           <img src={gif2} alt="team-gif" />
         </div>
         <ul>
-          <li>Estudiando que se nos pide: Users Stories</li>
-          <li>Planificando que hacer en cada Sprint y así entregar valor</li>
-          <li>Autogestionandonos para cumplir con los objetivos marcados</li>
+          <li>Estudiando qué se nos pide: Users Stories</li>
+          <li>Planificando qué hacer en cada Sprint y así entregar valor</li>
+          <li>Autogestionándonos para cumplir con los objetivos marcados</li>
           <li>Haciendo seguimiento diario </li>
         </ul>
       </div>
@@ -32,7 +32,7 @@ const Square = () => {
           <img src={sass}/>
         </div>
         <div className="tecnologies__container--info">
-          <h3 className="scrum__subtitle--two" >Tecnologías y herramientas empleadas</h3>
+          <h3 className="scrum__subtitle--two" >Tecnologías y herramientas empleadas:</h3>
           <h4>React, SASS, GIT, Github, Markdown, JS</h4>
           <p>Trello, Slack, Zoom </p>
         </div>
