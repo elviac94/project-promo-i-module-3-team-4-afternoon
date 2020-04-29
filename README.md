@@ -8,7 +8,7 @@ El proyecto consiste en refactorizar con React el código JavaScript vanilla del
 ***Awesome profile cards* es una aplicación interactiva de creación de tarjetas de visita**. En ella puedes rellenar tu información personal y tus perfiles profesionales y ver cómo quedará tu tarjeta según la vas creando. Posteriormente obtendrás un enlace único que puedes compartir donde quieras, y directamente en tu Twitter sin salir de la aplicación.  
 
 Para usar la aplicación: 
-- Pruébala en nuestro enlace de Github.
+- Pruébala en nuestro enlace de [Github Pages]( http://beta.adalab.es/project-promo-i-module-3-team-4-afternoon).
 - Descarga o clona el repositorio:  `git clone https://github.com/Adalab/project-promo-i-module-3-team-4-afternoon.git`, instala el sistema de gestión de paquetes para Node.js con `npm install` y arranca la aplicación con `npm start` para usarla de forma local.
 
 ## ¿Cómo está desarrollada?
