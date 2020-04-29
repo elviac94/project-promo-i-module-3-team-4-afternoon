@@ -53,7 +53,7 @@
     &__name {
       width: 300px;
 
-      @media all and (min-width: 700px) {
+      @include forTablet {
         width: 520px;
       }
       
@@ -134,9 +134,14 @@
 
   .demo__pages--content {
     display: flex;
+    flex-direction: column;
     width: 100vw;
     justify-content: center;
     align-items: center;
+
+    @include forPc {
+        flex-direction: row;
+    }
 
     img {
       width: 30vw;
