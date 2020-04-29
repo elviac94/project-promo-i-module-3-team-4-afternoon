@@ -27,7 +27,9 @@ const Slash = () => {
         <Route exact path="/reactivePalettes/Code/CardMaker">
           <div class="slash">
             <div className="slash__header">
-              <img src={ourCode} alt="our code" />
+            <Link to="/reactivePalettes" title="Proyecto">
+                <img className="logoPalettes" src={ourCode} alt="our code" />
+              </Link>
             </div>
             <div class="slash__cards">
               <Link className="slash__cards--image image" to='/reactivePalettes/Code' title="Ir al inicio">
