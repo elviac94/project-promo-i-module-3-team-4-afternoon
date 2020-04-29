@@ -1,0 +1,30 @@
+
+body{
+  font-family: $mainFont;
+}
+
+.wrapper-general{
+  padding: 0px 20px 0px 20px;
+    
+  @include forTablet{
+     padding: 0px 40px 0px 40px;
+  }
+}
+
+.wrapperMain{
+  background-color: $LandingBgColor;
+  padding: 0px 35px 0px 35px;
+
+  @include forTablet{
+    padding: 0px 175px 0px 175px;
+  }
+}
+
+.wrapperFooter{
+  border-top: solid 1px #d8d8d8;
+  padding: 18px 60px 20px 60px;
+
+  @include forTablet{
+    padding: 10px 40px 10px 40px;
+  }
+}

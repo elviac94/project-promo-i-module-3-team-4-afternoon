@@ -1,0 +1,150 @@
+.mainindex__container {
+  height: 82vh; // calc(100vh - 90px);
+  padding-top: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+  @include forTablet {
+    height: 91.2vh;
+    padding-top: 100px;
+    padding-bottom: 59px;
+  }
+
+  .mainindex__container--logo {
+    width: 250px;
+    height: 63px;
+    
+    @include forTablet{
+    width: 419px;
+    height: 105px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+  .mainindex__container--text {
+    text-align: center;
+    margin-top: 35.4px;
+    margin-bottom: 20px;
+    
+    @include forTablet{
+      margin-top: 31px;
+      margin-bottom: 27px;
+    }
+
+    & .mainindex__container--title {
+      font-family: $landingTitle;
+      color: $primaryColor;
+      font-size: 19.2px;
+      font-weight: 900;
+      padding-bottom: 2px;
+      
+      @include forTablet{
+        font-size: 24px;
+      }
+    }
+
+    & .mainindex__container--phrase {
+      font-family: $mainFont;
+      color: $secondaryTextColor;
+      font-size: 12.8px;
+      width: 264px;
+      line-height: 1.3;
+      
+      @include forTablet{
+        width: 331px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .mainindex__container--typeface {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+    border: solid 1.6px rgba(225,115,52, 0.21);
+    padding: 15px 0 10px 0;
+    width: 100%;
+    max-width: 268px;
+    border-radius: 5px;
+    text-align: center;
+
+    @include forTablet{
+      margin-bottom: 80px;
+      max-width: 325px;
+    }
+  }
+
+  .image-design, .image-complete, .image-share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .far, .fas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primaryColor;
+    width: 25px;
+    height: 26px;
+    font-size: 22.4px;
+
+    @include forTablet{
+      width: 32px;
+      height: 29px;
+      font-size: 28px;
+    }
+  }
+
+  .text-item {
+    font-family: $mainFont;
+    font-size: 12.8px;
+    font-weight: normal;
+    color: $primaryTextColor;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 7.8px;
+
+    @include forTablet{
+      font-size: 16px;
+    }
+  }
+
+  .mainindex__button {
+    font-family: $mainFont;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: $LandingButtonColor;
+    border-radius: 21px;
+    width: 129px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+
+    &:hover {
+      background-color: white;
+      color: $LandingButtonColor;
+      border: 1px solid $LandingButtonColor;
+    }
+
+    @include forTablet {
+      bottom: 60px;
+    }
+    @include forPc {
+      bottom: 100px;
+    }
+  }

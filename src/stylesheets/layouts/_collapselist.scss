@@ -1,0 +1,70 @@
+.collapse-item {
+  display: none;
+}
+
+.visible {
+  display: block;
+  border-bottom: solid 1px lightgrey;
+  padding-bottom: 10px;
+}
+
+.section-top__border {
+  border-bottom: solid 1px lightgrey;
+}
+.section-top__noborder {
+  border-bottom: none;
+}
+
+.section-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  .title-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .far, .fas {
+      margin-right: 10px;
+      color: $primaryColor;
+      font-size: 18px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      color: $primaryTextColor;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+  .arrow {
+    width: 16px;
+    height: 18px;
+    background-image: url(../../images/arrow.png);
+    background-size: contain;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .arrow-active {
+    transform: rotateX(180deg);
+    animation-name: intro;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+
+    @keyframes intro {
+      from {
+        opacity: 0.2;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
+
