@@ -1,7 +1,16 @@
 @mixin forTablet {
-    @media all and (min-width: $Tablet) { @content; }
+  @media all and (min-width: $Tablet) {
+    @content;
   }
-  
-  @mixin forPc {
-    @media all and (min-width: $pc) { @content; }
+}
+
+@mixin forPc {
+  @media all and (min-width: $pc) {
+    @content;
   }
+}
+@mixin forLessHeight {
+  @media all and (max-height: 550px) {
+    @content;
+  }
+}

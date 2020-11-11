@@ -135,6 +135,10 @@
     position: absolute;
     bottom: 30px;
 
+    @include forLessHeight{
+      bottom: 20px;
+    }
+
     &:hover {
       background-color: white;
       color: $LandingButtonColor;
@@ -142,9 +146,9 @@
     }
 
     @include forTablet {
-      bottom: 60px;
+      bottom: 30px;
     }
     @include forPc {
-      bottom: 100px;
+      bottom: 30px;
     }
   }
